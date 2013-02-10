@@ -32,3 +32,38 @@ how the paper developed and changed as it was written.  Of course, the more
 saved revisions we have, the easier it is to piece together how things changed
 over time.
 
+Why you should use it (for everything)
+--------------------------------------
+
+In important aspect of any scientific endeavour is **reproducibility**.  We
+should be able to replicate every figure we have ever published, even if we have
+significantly developed our codes and tools since. 
+
+As astronomers, we spend much of our time writing code, whether it be a
+simulation code or an observational reduction pipeline.  As such, our codes are
+often constantly evolving.  By putting all of our code under version control we
+can:
+
+- record the reference of the exact code version that produced a particular plot or result.
+- roll back our code to previous states.
+- identify when/how bugs were introduced.
+- efficiently share and collaborate on our codes with others.
+
+Many of these are also useful when writing papers.  Here we can use version
+control to:
+
+- bring back that paragraph we accidentally deleted last week.
+- try out a different structure and simply disregard it if we don't like it.
+- concurrently work on a paper with a collaborator and then automatically merge all of our updates together.
+
+The upshot is **you should use version control for almost everything**.  The
+benefits are well worth it...
+
+
+Git
+---
+
+In this tutorial we will be using `Git <http://git-scm.com/>`_ version control
+system.
+
+

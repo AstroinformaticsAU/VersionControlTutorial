@@ -8,7 +8,10 @@ Version Control Tutorial
 
 These are the course notes for the **Version Control** session of the `2013 ASA/ANITA Astroinformatics Summer School <http://www.smp.uq.edu.au/anitaworkshop2013/?page_id=30>`_.
 
-This session introduces the concept of version control and its particular importance for researchers.  We will also try out some practical examples using the `Git <http://git-scm.com/>`_ version control system and touch on the following topics: 
+This session introduces the concept of version control and its particular
+importance for researchers.  We will also try out some practical examples using
+the `Git <http://git-scm.com/>`_ version control system and touch on the
+following topics: 
 
 - basic usage (creating a repository, adding files, committing changes)
 - branches

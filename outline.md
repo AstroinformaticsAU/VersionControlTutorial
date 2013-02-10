@@ -9,6 +9,14 @@ This session will introduce the concept of version control and its particular im
 - online hosting
 
 
+
+# NOTES.todo
+
+- Remember to use best practices paper
+- Add video of Linus saying why we should use Git
+
+
+
 # Introduction
 
 ## What is version control?
@@ -22,7 +30,26 @@ Version control is commonly used to manage source code, however, it is also well
 
 ## Why you should use it (for everything)
 
+In important aspect of any scientific endeavour is **reproducibility**.  We should be able to replicate every figure we have ever publish, even if we have significantly developed our codes and tools in the mean time. 
+
+As astronomers, we spend much of our time writing code, whether it be a simulation code or a observational reduction pipeline.  As such, our codes are often constantly evolving.  By putting all of our code under version control we can:
+
+- Record the reference of the exact code version that produced a particular plot or result.
+- Roll back our code to previous states.
+- Identify when/how bugs were introduced.
+- Efficiently share and collaborate on our codes with others.
+
+Many of these are also useful when writing papers.  Here we can use version control to 
+
+- Bring back that paragraph we accidentally deleted last week.
+- Try out a different structure and simply disregard it if we don't like it.
+- Concurrently work on a paper with a collaborator and then automatically merge all of our updates together.
+
+The upshot is **you should use version control for almost everything**.  The benefits are well worth it...
+
 ## Why Git?
+
+
 
 
 # 3. First steps
