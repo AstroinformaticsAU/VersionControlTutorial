@@ -12,12 +12,12 @@ This session will introduce the concept of version control and its particular im
 
 # NOTES.todo
 
-- Remember to use best practices paper
+- Remember to use best practices paper @done
 - Add video of Linus saying why we should use Git
+- Remember to discuss GUI options...
 
 
-
-# Introduction
+# 1. Introduction
 
 ## What is version control?
 
@@ -49,10 +49,17 @@ The upshot is **you should use version control for almost everything**.  The ben
 
 ## Why Git?
 
+- distributed
+- fast
+- can work away on plane with no connection to central repo
+- written by Linus :)
+
+There are other alternatives but we aren't going to cover them in this tutorial...
 
 
+# 2. First steps
 
-# 3. First steps
+I'll assume that you already have git installed and setup on your system.  If not then probably the easiest way to achieve this is to follow the instructions here.
 
 ## Creating a repository
 
@@ -61,21 +68,21 @@ The upshot is **you should use version control for almost everything**.  The ben
 ## Committing changes
 
 
-# 4. Branches
+# 3. Branches
 
 ## What is a branch?
 
 ## Creating a branch
 
 
-# 5. Merging and conflicts
+# 4. Merging and conflicts
 
 ## Merging branches
 
 ## Dealing with conflicts
 
 
-# 6. Sharing and collaboration
+# 5. Sharing and collaboration
 
 ## Your repository is your own
 
