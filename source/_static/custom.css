@@ -1,0 +1,15 @@
+blockquote {
+    background-color: #eee;
+    border: 1px solid #ccc;
+    font-size: 120%;
+}
+
+blockquote p {
+    margin-left: 10px;
+    margin-right: 10px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+p.attribution {
+    font-size: 80%;
+}

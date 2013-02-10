@@ -36,6 +36,13 @@ over time.
 Why you should use it (for everything)
 --------------------------------------
 
+    "*In practice, everything that has been created manually should be put in
+    version control, including programs, original field observations, and the
+    source files for papers.*"
+
+    -- Best Practices for Scientific Computing; Wilson et al. 2012
+    (`arXiv:1210.0530 <http://arxiv.org/abs/1210.0530>`_)
+
 In important aspect of any scientific endeavour is **reproducibility**.  We
 should be able to replicate every figure we have ever published, even if we have
 significantly developed our codes and tools since. 
@@ -45,7 +52,7 @@ simulation code or an observational reduction pipeline.  As such, our codes are
 often constantly evolving.  By putting all of our code under version control we
 can:
 
-- record the reference of the exact code version that produced a particular plot or result.
+- record a unique identifier for the exact code version used to produce a particular plot or result.
 - roll back our code to previous states.
 - identify when/how bugs were introduced.
 - efficiently share and collaborate on our codes with others.
@@ -83,11 +90,11 @@ entire repository and can make changes as they like, only committing to, or
 checking out from, the 'central' repository when they are happy.  With more
 traditional "centralised" systems such as Subversion, users must have access to
 the central repository to commit any changes.  With Git, you could happily work
-away on a plane without an internet connection...
+away on a plane without an internet connection.
 
-Git is also much faster than alternatives such as Subversion and is written
-primarily in C and shell script.  Finally - it's worth noting that Git was
-originally written by the famous Linus Torvalds (creator of Linux).
+Git is also much faster than many alternatives, such as Subversion, and is
+written primarily in C and shell script.  Finally - it's worth noting that Git
+was originally written by the famous Linus Torvalds (creator of Linux).
 
 There are other worthwhile alternatives which we aren't going to cover here - in
 particular `Mercurial <http://mercurial.selenic.com/>`_.  Written in Python,
