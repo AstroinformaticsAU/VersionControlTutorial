@@ -29,10 +29,52 @@ command inside of our ``dummy_paper`` directory::
 
 Well that was simple!  However, if a quick check of ``git status`` shows that we
 are still on the ``master`` branch.  In order to start working with our new
-branch we to perform a ``checkout``; This moves our current "HEAD" (this is what
-Git calls the code version we are working with) to the branch ``risky_idea``::
+branch we need to perform a ``checkout``; This moves our current "HEAD" (this is
+what Git calls the pointer to the code version we are working with) to the
+branch ``risky_idea``::
 
     % git checkout risky_idea
 
 Running ``git status`` now should show that you are on the ``risky_idea``
 branch.
+
+.. topic:: Exercise 2a
+
+    .. highlight:: latex
+
+    Add another section to ``master.tex`` with the following::
+    
+        \section{The Empire Strikes Back}
+        Laugh it up fuzz-ball!...
+    
+    Then stage and commit your changes.
+
+
+.. highlight:: console
+
+
+.. Viewing the commit history
+.. ---------------------------
+
+
+
+.. Viewing commit differences
+.. ---------------------------
+
+
+Command summary
+----------------
+
+
++--------------------------------+--------------------------------------------------+
+| **Command**                    |  **Description**                                 |
++--------------------------------+--------------------------------------------------+
+| ``git branch``                 |  Create a new branch.                            |
++--------------------------------+--------------------------------------------------+
+| ``git checkout``               |  Checkout a branch/commit.                       |
++--------------------------------+--------------------------------------------------+
+| ``git log``                    |  View the commit history for the current branch. |
++--------------------------------+--------------------------------------------------+
+| ``git diff <commit> <commit>`` | Compare (difference) two commits.                |
++--------------------------------+--------------------------------------------------+
+
