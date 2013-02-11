@@ -59,7 +59,7 @@ There are other alternatives but we aren't going to cover them in this tutorial.
 
 # 2. First steps
 
-I'll assume that you already have git installed and setup on your system.  If not then probably the easiest way to achieve this is to follow the instructions here.
+I'll assume that you already have git installed and setup on your system.  If not then probably the easiest way to achieve this is to download an installer from [here](http://git-scm.com/downloads).
 
 ## Creating a repository
 
