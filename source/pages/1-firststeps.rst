@@ -94,8 +94,27 @@ Add the following to your file and save your changes::
 
 .. highlight:: console
 
-Finally "stage" your ``master.tex`` file to the repository's list of changes
-using the following command::
+Now let's check the status of our repository using the following command::
+
+    % git status
+
+You should see something similar to the following::
+
+    # On branch master
+    #
+    # Initial commit
+    #
+    # Untracked files:
+    #   (use "git add <file>..." to include in what will be committed)
+    #
+    #	master.tex
+    nothing added to commit but untracked files present (use "git add" to track) 
+
+This tells us that ``master.tex`` currently falls under the category of
+"untracked" files.  In other words, Git is not tracking any changes we make to
+this file.
+
+In order to tell Git to start tracking our new file, use the following command::
 
     % git add master.tex
 
@@ -104,7 +123,7 @@ using the following command::
 Committing changes
 ------------------
 
-At this point, if you type the command::
+At this point, if you type again::
 
     % git status
 
@@ -129,7 +148,7 @@ commit our current changes type::
 
     % git commit
 
-This will bring up your default editor to allow you to provide a "commit
+This will bring up your favorite editor to allow you to provide a "commit
 message".  On the **first line** of the file write the following commit
 message::
 
@@ -153,14 +172,41 @@ our changes.
     what would happen...
 
 
+Staging modified files
+----------------------
+
+.. highlight:: latex
+
+Add another section to ``master.tex`` with the following::
+
+    \section{A New Hope}
+    That's no moon, that's a battle station.
+
+.. highlight:: console
+
+If you now run ``git status``, you should see the following::
+
+    # On branch master
+    # Changes not staged for commit:
+    #   (use "git add <file>..." to update what will be committed)
+    #   (use "git checkout -- <file>..." to discard changes in working directory)
+    #
+    #	modified:   master.tex
+    #
+    no changes added to commit (use "git add" and/or "git commit -a")
+
+What Git now tells us is that ``master.tex`` falls under the category of
+"Changes not staged for commit".  This means the file has changed since the last
+commit, however, we haven't told Git that we want to include these new changes
+in our next commit.  To do that, we must "stage" the file using ``git add``
+again::
+
+    % git add master.tex
+
+A final check with ``git status`` should show that ``master.tex`` now falls
+under the category of "Changes to be committed".
+
 .. topic:: Exercise 1a
 
-    .. highlight:: latex
+    Go ahead and commit your staged changes to ``master.tex``.
 
-    Add another section to ``master.tex`` with the following::
-
-        \section{A New Hope}
-
-        That's no moon, that's a battle station.
-
-    Stage your changes and then commit them.
