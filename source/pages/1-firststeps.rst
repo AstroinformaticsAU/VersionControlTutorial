@@ -3,12 +3,30 @@
 First Steps
 ===========
 
-I'll assume that you already have git installed and setup on your system.  If
-not then probably the easiest way to achieve this is to download an installer
-from `here <http://git-scm.com/downloads>`_.
+I'll assume that you already have git installed on your system.  If not then
+probably the easiest way to achieve this is to download an installer from `here
+<http://git-scm.com/downloads>`_.
+
+Once you have Git installed, the next step is to provide it with your name and
+email address which will be used to sign your commits.  This provides us with
+the ability to see who made what changes when collaborating on a project.
+
+Type the following in a terminal, making the obvious substitutions::
+
+    % git config --global user.name "John Doe" 
+    % git config --global user.email johndoe@example.com
+
+Next you need to tell Git what editor you want to use when Git needs you to type
+something::
+    
+    % git config --global core.editor vim
+
+You should replace ``vim`` with what ever your favorite editor is (e.g.
+``emacs``, ``nano``, ``subl``, ``mate`` etc.).
 
 In what follows, we will use writing and collaborating on a LaTeX paper as an
 example project... 
+
 
 Creating a repository
 ---------------------
@@ -130,7 +148,19 @@ our changes.
     the relevant changes being committed are.  If more detail is required then
     leave a blank line and add a longer more descriptive message there.
 
-.. todo::
+    Also note that the norm is to use the future tense in a commit message.
+    i.e. if you were to apply the changes in the commit, the message would say
+    what would happen...
 
-    Add an exercise here where the students make further changes to master.tex.
 
+.. topic:: Exercise 1a
+
+    .. highlight:: latex
+
+    Add another section to ``master.tex`` with the following::
+
+        \section{A New Hope}
+
+        That's no moon, that's a battle station.
+
+    Stage your changes and then commit them.
