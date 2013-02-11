@@ -13,3 +13,8 @@ blockquote p {
 p.attribution {
     font-size: 80%;
 }
+
+div.admonition.tip {
+    background-color: #B2D1FF;
+    border: 1px solid #ccc;
+}
