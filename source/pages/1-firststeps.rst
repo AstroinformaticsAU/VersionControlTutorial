@@ -215,3 +215,19 @@ under the category of "Changes to be committed".
     Go ahead and commit your staged changes to both ``master.tex`` and
     ``appendix.tex``.
 
+
+Command summary
+---------------
+
++-------------+-----------------------------------------------+
+| **Command** |  **Description**                              |
++-------------+-----------------------------------------------+
+| git init    |  Initialise a new Git repository.             |
++-------------+-----------------------------------------------+
+| git status  |  Check the current status of a repository.    |
++-------------+-----------------------------------------------+
+| git add     |  Stage new and modified files.                |
++-------------+-----------------------------------------------+
+| git commit  |  Commit staged changes.                       |
++-------------+-----------------------------------------------+
+
