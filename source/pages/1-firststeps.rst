@@ -22,7 +22,7 @@ something::
     % git config --global core.editor vim
 
 You should replace ``vim`` with what ever your favorite editor is (e.g.
-``emacs``, ``nano``, ``subl``, ``mate`` etc.).
+``emacs``, ``nano``, ``subl``, etc.).
 
 In what follows, we will use writing and collaborating on a LaTeX paper as an
 example project... 
@@ -208,5 +208,10 @@ under the category of "Changes to be committed".
 
 .. topic:: Exercise 1a
 
-    Go ahead and commit your staged changes to ``master.tex``.
+    Add another file to your git repository called ``appendix.tex``.  You can
+    put whatever you want in here (or just leave it empty), but don't forget to
+    ``add`` it to your repository.
+
+    Go ahead and commit your staged changes to both ``master.tex`` and
+    ``appendix.tex``.
 
