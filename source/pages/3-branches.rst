@@ -29,16 +29,26 @@ command inside of our ``dummy_paper`` directory::
 
 Well that was simple!  However, if a quick check of ``git status`` shows that we
 are still on the ``master`` branch.  In order to start working with our new
-branch we need to perform a ``checkout``; This moves our current "HEAD" (this is
-what Git calls the pointer to the code version we are working with) to the
-branch ``risky_idea``::
+branch we need to perform a ``checkout``; This moves our current "HEAD"
+(remember this is what Git calls the pointer to the most recent relevant commit)
+to the branch ``risky_idea``::
 
     % git checkout risky_idea
 
 Running ``git status`` now should show that you are on the ``risky_idea``
 branch.
 
-.. topic:: Exercise 2a
+Now run::
+
+    % git log
+
+and you should see that our earlier commits from the ``master`` branch are still
+there.  When running ``git branch``, the newly created branch inherits the
+history of the original branch we diverged from (in this case the ``master``
+branch).  However, any subsequent commits to the new branch will not exist in
+the original.
+
+.. topic:: Exercise 3a
 
     .. highlight:: latex
 
@@ -47,11 +57,12 @@ branch.
         \section{The Empire Strikes Back}
         Laugh it up fuzz-ball!...
     
-    Then stage and commit your changes.
+    .. highlight:: console
 
+    Then stage and commit your changes.  Finally, compare the ``risky_idea``
+    branch with the tip of the ``master`` branch using ``git diff``::
 
-.. highlight:: console
-
+        % git diff master
 
 
 Command summary
