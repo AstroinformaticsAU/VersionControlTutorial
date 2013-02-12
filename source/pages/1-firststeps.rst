@@ -1,6 +1,6 @@
 .. highlight:: console
 
-First Steps
+First steps
 ===========
 
 I'll assume that you already have git installed on your system.  If not then
