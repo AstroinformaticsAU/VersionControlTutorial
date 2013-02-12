@@ -53,18 +53,15 @@ branch.
 .. highlight:: console
 
 
-.. Viewing the commit history
-.. ---------------------------
 
+Viewing commit differences
+---------------------------
 
-
-.. Viewing commit differences
-.. ---------------------------
+Now that we know how to see the commit history  
 
 
 Command summary
 ----------------
-
 
 +--------------------------------+--------------------------------------------------+
 | **Command**                    |  **Description**                                 |
