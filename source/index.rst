@@ -15,8 +15,8 @@ following topics:
 
 - basic usage (creating a repository, adding files, committing changes)
 - branches
-- sharing and collaboration
 - merging and conflicts
+- sharing and collaboration
 - online hosting
 
 This tutorial is licensed under a `Creative Commons Attribution-ShareAlike 3.0 Unported License <http://creativecommons.org/licenses/by-sa/3.0/deed.en_US>`_.
