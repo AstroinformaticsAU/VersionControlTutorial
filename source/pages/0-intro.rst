@@ -68,6 +68,8 @@ The upshot is **you should use version control for almost everything**.  The
 benefits are well worth it...
 
 
+.. _git_intro:
+
 Git
 ---
 
@@ -75,6 +77,7 @@ In this tutorial we will be using `Git <http://git-scm.com/>`_.
 
     .. image:: /_static/git-logo.png
         :align: center
+        :width: 33%
 
     "*Git is a free and open source distributed version control system
     designed to handle everything from small to very large projects with speed
