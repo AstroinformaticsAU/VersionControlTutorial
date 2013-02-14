@@ -63,7 +63,7 @@ First create a new branch called ``episode5`` and check it out::
 
 .. highlight:: latex
 
-Now add another section to ``master.tex`` with the following::
+Then add another section to ``master.tex`` with the following::
 
     \section{Revenge of the Jedi}
     That blast came from the Death Star! That thing's operational!
@@ -76,8 +76,13 @@ Commit your changes::
     % git commit
 
 Now we have a new branch with a new commit that adds a section to our paper.
-However, what if we now go back to the ``master`` branch and try to add the same
-section but with a different name...
+However, imagine the situation where we decide we want to leave this section for
+the moment and go back to working on our second section.  To do this, we return
+to our ``master`` branch.  During the course of our edits we come up with
+another name for our newest section though, and pen this in so that we don't
+forget.  This will lead to a conflict when we later merge our ``episode5``
+branch back into ``master``.  Let's replicate this conflict now to see what
+happens...
 
 First checkout ``master``::
 
@@ -139,21 +144,30 @@ title from the ``master`` branch, and so we need to leave only that line::
 After you have edited and saved ``master.tex``, finish the merge by staging and
 committing your results::
 
-    % git add master.tex
-    % git commit
+    % git commit -a 
 
 The commit message will be auto-populated for you, and so there is no need to
 edit it.
+
+.. note::
+
+    Note that we used ``git commit -a`` here to stage and commit our changes in
+    one go.  This is a very useful shortcut.  However, it will only stage
+    changes in files which are already being tracked by the repository.  i.e. if
+    you add a new file to your project, you will still need to run ``git add``
+    for Git to start tracking it.
 
 
 Command summary
 ---------------
 
-+--------------------------------+--------------------------------------------------+
-| **Command**                    |  **Description**                                 |
-+--------------------------------+--------------------------------------------------+
-| ``git merge``                  | Merge branches and commits.                      |
-+--------------------------------+--------------------------------------------------+
-| ``git branch -d``              | Delete a branch.                                 |
-+--------------------------------+--------------------------------------------------+
++--------------------------------+---------------------------------------------------------+
+| **Command**                    |  **Description**                                        |
++--------------------------------+---------------------------------------------------------+
+| ``git merge``                  | Merge branches and commits.                             |
++--------------------------------+---------------------------------------------------------+
+| ``git branch -d``              | Delete a branch.                                        |
++--------------------------------+---------------------------------------------------------+
+| ``git commit -a``              | Stage all changes in **tracked** files and commit them. |
++--------------------------------+---------------------------------------------------------+
 

@@ -6,6 +6,11 @@
 Version Control Tutorial
 =========================
 
+.. image:: /_static/vc-xkcd.jpg
+   :alt: Version control XKCD style
+   :align: center
+   :width: 80%
+
 These are the course notes for the **Version Control** session of the `2013 ASA/ANITA Astroinformatics Summer School <http://www.smp.uq.edu.au/anitaworkshop2013/?page_id=30>`_.
 
 This session introduces the concept of version control and its particular
