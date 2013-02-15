@@ -78,8 +78,12 @@ The basic workflow is almost always the same though:
 - Once any conflict are resolved you can update the central repository with your
   new code.
 
-For a proper introduction into collaborating with Git, see the excellent online
-book, `Pro Git <http://git-scm.com/book>`_.  The help pages of `Github`_ are
-also an excellent resource.
+~~~~~~~~~~
+
+.. rubric:: Further reading
+
+For a proper introduction to hosting and collaborating with Git, see the
+excellent online book, `Pro Git <http://git-scm.com/book>`_.  The help pages of
+`Github`_ are also an excellent resource.
 
 .. _Github: https://github.com/
