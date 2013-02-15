@@ -1,3 +1,5 @@
+.. highlight:: console
+
 Online hosting and collaboration
 ================================
 
@@ -26,7 +28,7 @@ opinion:
   <http://blog.bitbucket.org/2012/08/20/bitbucket-academic/>`_!  These
   repositories only allow users who you specify to have access.  
   
-- `Github <https://github.com/>`_: This is site also offers unlimited free
+- `Github`_: This is site also offers unlimited free
   public repositories.  With an academic institution email address you can also
   get 5 free private repositories.  Github is probably **the** place for new
   open source software and tools.  It's a fantasitc service and well worth
@@ -83,4 +85,8 @@ The basic workflow is almost always the same though:
 - Once any conflict are resolved you can update the central repository with your
   new code.
 
+For a proper introduction into collaborating with Git, see the excellent online
+book, `Pro Git <http://git-scm.com/book>`_.  The help pages of `Github`_ are
+also an excellent resource.
 
+.. _Github: https://github.com/
