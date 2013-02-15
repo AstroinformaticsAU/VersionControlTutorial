@@ -84,7 +84,7 @@ In this tutorial we will be using `Git <http://git-scm.com/>`_.
 
     .. image:: /_static/git-logo.png
         :align: center
-        :width: 33%
+        :width: 20%
 
     "*Git is a free and open source distributed version control system
     designed to handle everything from small to very large projects with speed

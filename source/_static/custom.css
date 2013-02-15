@@ -18,3 +18,7 @@ div.admonition.tip {
     background-color: #CCEBFF;
     border: 1px solid #008AE6;
 }
+
+p.caption {
+    color: #808080
+}

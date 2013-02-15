@@ -11,13 +11,13 @@ you try it in your ``dummy_paper`` directory you should see something like the
 following::
 
     commit 2983eadcbb3c5b198906c252bc5ee3ff2a99f572
-    Author: Han Solo <jbloggs@jabbaspalace.edu.au>
+    Author: G Lucas <glucas@jabbaspalace.edu.au>
     Date:   Tue Feb 12 10:16:23 2013 +1100
 
         Add section "A New Hope" and appendix.tex.
 
     commit ef5ca0a7d216a57aea08d2227e167f38d31277bc
-    Author: Han Solo <jbloggs@jabbaspalace.edu.au>
+    Author: G Lucas <glucas@jabbaspalace.edu.au>
     Date:   Mon Feb 11 14:54:05 2013 +1100
 
         Add basic structure of master.tex.
@@ -92,7 +92,7 @@ we can also see that we have added the ``appendix.tex`` file.
 By specifying only one commit reference when calling ``git diff`` we actually
 implicity ran::
 
-    % git diff ef5ca0a HEAD
+    % git diff ef5ca0a..HEAD
 
 ``HEAD`` is a shortcut for the commit reference pointing to the most recent
 relevant commit.  To access the second most recent commit we can use the
@@ -119,7 +119,22 @@ commit history and relevant diffs all together.
 
 .. image:: /_static/gitk.jpg
    :align: center
-   :width: 100%
+   :width: 80%
+
+
+Playing the blame game
+----------------------
+
+Another useful way to visualise the history to is to look at a single file and
+see in which commit each line was last changed.  Try this::
+
+    % git blame master.tex --date=relative
+
+You should then see a copy of ``master.tex`` with the reference and author of
+the last commit where each line was modified.  Imagine that we identified a bug
+in a line of code.  We could then use this technique to see how long ago that
+bug was introduced (and by who!).
+
 
 
 Command summary
@@ -134,3 +149,6 @@ Command summary
 +--------------------------------+--------------------------------------------------+
 | ``gitk``                       | View the commit history in a GUI.                |
 +--------------------------------+--------------------------------------------------+
+| ``git blame <file>``           | See when each line of a file was last changed.   |
++--------------------------------+--------------------------------------------------+
+
