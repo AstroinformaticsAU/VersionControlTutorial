@@ -57,7 +57,7 @@ First create a new branch called ``episode5`` and check it out::
 .. tip::
 
     In situations where you want to create a new branch and immediately check it
-    out (as above) you can use the follwoing shortcut::
+    out (as above) you can use the following shortcut::
 
         % git checkout -b <branch_name>
 

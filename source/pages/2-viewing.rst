@@ -61,7 +61,7 @@ would type::
     % git diff ef5ca0a
 
 Your commit reference will be different to mine however, and so you must
-subsititue the appropriate reference in place of ``ef5ca0a``.  Remember, you
+substitute the appropriate reference in place of ``ef5ca0a``.  Remember, you
 can get this reference using the ``git log`` command as outlined above.
 
 .. highlight:: diff
@@ -91,7 +91,7 @@ The ``+`` signs show text which has been added since our first commit, and any
 we can also see that we have added the ``appendix.tex`` file.
 
 By specifying only one commit reference when calling ``git diff`` we actually
-implicity ran::
+implicitly ran::
 
     % git diff ef5ca0a..HEAD
 
@@ -106,7 +106,7 @@ since the last commit.  To do this simply run the command with no arguments.
 
 .. topic:: Exercise 2a
 
-    Add a scentence to the section "A New Hope" of ``master.tex`` but don't
+    Add a sentence to the section "A New Hope" of ``master.tex`` but don't
     commit the change.  Now try running::
 
         % git diff

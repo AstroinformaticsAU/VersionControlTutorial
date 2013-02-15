@@ -12,24 +12,7 @@ This session will introduce the concept of version control and its particular im
 
 # NOTES.todo
 
-- Remember to discuss GUI options...
 - Add `color-auto` command to `.gitconfig`
 - Include `git amend`
 - Include deleting/moving files
-
-- Collaboration section
-    - Central repo
-        - Taking code open source
-    - Online hosting
-        - Options.  Recommend bitbucket for private and github for public.
-    - Cloning a repository
-    - Best practices when collaborating
-        - Use branches
-        - The command cycle (pull, merge, push)
-    - Collaboration options (won't cover in detail here)
-        - Forks
-        - Patches
-        - Pull requests
-        - Pushing
-    - This tutorial is publicly hosted online!
 

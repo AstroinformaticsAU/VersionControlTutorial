@@ -17,7 +17,7 @@ place for such a central repository is online.
 
 There are a number of excellent options for online hosting of git repositories
 (for a list see `this
-<http://en.wikipedia.org/wiki/Git_(software)#Source_code_hosting>`_ wikipedia
+<http://en.wikipedia.org/wiki/Git_(software)#Source_code_hosting>`_ Wikipedia
 entry). However, there are two options in particular which stand out in my
 opinion:
 
@@ -31,9 +31,9 @@ opinion:
 - `Github`_: This is site also offers unlimited free
   public repositories.  With an academic institution email address you can also
   get 5 free private repositories.  Github is probably **the** place for new
-  open source software and tools.  It's a fantasitc service and well worth
+  open source software and tools.  It's a fantastic service and well worth
   using, especially if you want to take your own code open source.  You can also
-  use github to serve webpages for free.  This tutorial is open sourced on
+  use Github to serve web pages for free.  This tutorial is open sourced on
   Github.
 
 
@@ -60,13 +60,13 @@ and you will see that you also have the full commit history.
 Collaboration strategies
 ------------------------
 
-Unfortuntely, it is outwith the scope of this tutorial to cover all of the
+Unfortunately, it is out-with the scope of this tutorial to cover all of the
 different ways you can collaborate with Git.  There are a number of options for
-how to get your changes encorporated into the central repository for everyone to
+how to get your changes incorporated into the central repository for everyone to
 have access to.  These include, forking and pull requests, email patches, and
 direct pushing.
 
-The basic workflow is almost always the same though:
+The basic work-flow is almost always the same though:
 
 - Make your changes in your own personal copy of the repository.
     - Ideally, this should be done in a new branch.
@@ -76,7 +76,7 @@ The basic workflow is almost always the same though:
   pulled (or made your original clone).
 - At this point you may have some conflicts to deal with.
 - Once any conflict are resolved you can update the central repository with your
-  new code.
+  new code (using for example ``git push``).
 
 ~~~~~~~~~~
 
