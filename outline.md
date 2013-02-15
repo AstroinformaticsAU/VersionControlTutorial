@@ -14,7 +14,6 @@ This session will introduce the concept of version control and its particular im
 
 - Remember to discuss GUI options...
 - Add `color-auto` command to `.gitconfig`
-- Include `git blame`
 - Include `git amend`
 - Include deleting/moving files
 

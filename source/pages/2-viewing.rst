@@ -34,8 +34,8 @@ change what information is presented and how it looks.  For example, try typing:
 
 The result should be something like this::
 
-    * 2983ead Add section "A New Hope" and appendix.tex. <Han Solo>
-    * ef5ca0a Add basic structure of master.tex. <Han Solo> 
+    * 2983ead Add section "A New Hope" and appendix.tex. <G Lucas>
+    * ef5ca0a Add basic structure of master.tex. <G Lucas> 
 
 To investigate all the different options for formatting your log output, try
 looking at the help for the ``log`` command::

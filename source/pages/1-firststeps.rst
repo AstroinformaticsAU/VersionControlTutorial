@@ -13,8 +13,8 @@ the ability to see who made what changes when collaborating on a project.
 
 Type the following in a terminal, making the obvious substitutions::
 
-    % git config --global user.name "John Doe" 
-    % git config --global user.email johndoe@example.com
+    % git config --global user.name "G Lucas" 
+    % git config --global user.email glucas@jabbaspalace.edu.au
 
 Next you need to tell Git what editor you want to use when Git needs you to type
 something::
