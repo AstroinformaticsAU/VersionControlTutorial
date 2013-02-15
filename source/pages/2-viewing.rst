@@ -44,8 +44,9 @@ looking at the help for the ``log`` command::
 
 .. tip::
 
-    The ``git help`` command can be used to get the documentation for almost
-    every Git command.
+    ``git help <command>`` can be used to get the documentation for almost every
+    Git command.  If you type ``git help`` on it's own, you will also be
+    presented with a list of all major commands for reference.
 
 
 
@@ -126,15 +127,14 @@ Playing the blame game
 ----------------------
 
 Another useful way to visualise the history to is to look at a single file and
-see in which commit each line was last changed.  Try this::
+see in which commit each line was last changed.  Imagine that we identified a
+bug in a line of code.  We could then use this technique to see how long ago
+that bug was introduced (and by who!).  Try this::
 
     % git blame master.tex --date=relative
 
-You should then see a copy of ``master.tex`` with the reference and author of
-the last commit where each line was modified.  Imagine that we identified a bug
-in a line of code.  We could then use this technique to see how long ago that
-bug was introduced (and by who!).
-
+and you should see a copy of ``master.tex`` with the reference, author and time
+of the last commit where each line was modified.  
 
 
 Command summary
