@@ -13,8 +13,10 @@ This session will introduce the concept of version control and its particular im
 # NOTES.todo
 
 - Remember to discuss GUI options...
+- Add `color-auto` command to `.gitconfig`
 - Include `git blame`
-- Include deleting files
+- Include `git amend`
+- Include deleting/moving files
 
 - Collaboration section
     - Central repo
@@ -25,7 +27,7 @@ This session will introduce the concept of version control and its particular im
     - Best practices when collaborating
         - Use branches
         - The command cycle (pull, merge, push)
-    - Collaboration options
+    - Collaboration options (won't cover in detail here)
         - Forks
         - Patches
         - Pull requests

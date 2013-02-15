@@ -7,14 +7,80 @@ version control is for collaboration...
 Online hosting
 --------------
 
-As already discussed (:ref:`here <git_intro>`), Git uses a "distributed" model
-that allows everyone working on a project to have their own independent copy of
-the entire repository.  At some point though, you will want to have a central
-version of the code base which is used to unify everyones' efforts.
+As :ref:`already discussed <git_intro>`, Git uses a "distributed" model that
+allows everyone working on a project to have their own independent copy of the
+entire repository.  To collaborate effectively though we need a central version
+of the code base which is used to unify everyones' efforts.  Typically the best
+place for such a central repository is online.
 
-Typically the best place for such a central repository is online.
+There are a number of excellent options for online hosting of git repositories
+(for a list see `this
+<http://en.wikipedia.org/wiki/Git_(software)#Source_code_hosting>`_ wikipedia
+entry). However, there are two options in particular which stand out in my
+opinion:
+
+- `Bitbucket <https://bitbucket.org/>`_: This site overs unlimited free public
+  repositories (where anyone can see and checkout your project).  If you have an
+  email address from an academic institution though, then you can also get
+  `unlimited free private repositories
+  <http://blog.bitbucket.org/2012/08/20/bitbucket-academic/>`_!  These
+  repositories only allow users who you specify to have access.  
+  
+- `Github <https://github.com/>`_: This is site also offers unlimited free
+  public repositories.  With an academic institution email address you can also
+  get 5 free private repositories.  Github is probably **the** place for new
+  open source software and tools.  It's a fantasitc service and well worth
+  using, especially if you want to take your own code open source.  You can also
+  use github to serve webpages for free.  This tutorial is open sourced on
+  Github.
+
+
+Cloning a repository
+--------------------
+
+If you have the address (and correct permissions) for an online repository then
+you can grab your own copy using the ``clone`` command.  Try cloning your own
+copy of the source for this tutorial (make sure you are not in your ``a_paper``
+repository when you do this)::
+
+    % git clone https://github.com/smutch/VersionControlTutorial.git
+    % cd VersionControlTutorial
+
+You are now inside your own personal copy of the repository and can do
+whatever you want with it.  Try::
+
+    % git log
+
+and you will see that you also have the full commit history.
+
+When you do a clone, Git automatically adds the source repository as a "remote"
+called ``origin``.  A remote is simply a pointer to another copy of the same
+repository.  Run the command::
+
+    % git remote -v
+
+and you should see ``origin`` listed there.
+
 
 Collaboration strategies
 ------------------------
+
+Unfortuntely, it is outwith the scope of this tutorial to cover all of the
+different ways you can collaborate with Git.  There are a number of options for
+how to get your changes encorporated into the central repository for everyone to
+have access to.  These include, forking and pull requests, email patches, and
+direct pushing.
+
+The basic workflow is almost always the same though:
+
+- Make your changes in your own personal copy of the repository.
+    - Ideally, this should be done in a new branch.
+- "Pull" (using the command ``git pull``) the most recent version of the central
+  repository into your ``master`` branch.  This makes sure you are up-to-date
+  with any changes which were made by someone else subsequent to when you last
+  pulled (or made your original clone).
+- At this point you may have some conflicts to deal with.
+- Once any conflict are resolved you can update the central repository with your
+  new code.
 
 
