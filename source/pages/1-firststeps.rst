@@ -24,8 +24,14 @@ something::
 You should replace ``vim`` with what ever your favorite editor is (e.g.
 ``emacs``, ``nano``, ``subl``, etc.).
 
-In what follows, we will use writing and collaborating on a LaTeX paper as an
-example project... 
+You can also make things a little easier on the eyes by telling Git to add some
+color to it's messages::
+
+    % git config --global color.ui true
+
+Now that your all set up we can start looking at actually using Git for version
+control.  In what follows, we will use writing and collaborating on a LaTeX
+paper as an example project... 
 
 
 Creating a repository

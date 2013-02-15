@@ -12,7 +12,7 @@ This session will introduce the concept of version control and its particular im
 
 # NOTES.todo
 
-- Add `color-auto` command to `.gitconfig`
+- Add `color-auto` command to `.gitconfig` @done
 - Include `git amend`
 - Include deleting/moving files
 - Use life-cycle diagram
