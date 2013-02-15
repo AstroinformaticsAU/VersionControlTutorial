@@ -68,22 +68,19 @@ direct pushing.
 
 The basic work-flow is almost always the same though:
 
-- Make your changes in your own personal copy of the repository.
-    - Ideally, this should be done in a new branch.
+- Make your changes in your own personal copy of the repository, ideally in a
+  new branch.
 - "Pull" (using the command ``git pull``) the most recent version of the central
   repository into your ``master`` branch.  This makes sure you are up-to-date
   with any changes which were made by someone else subsequent to when you last
   pulled (or made your original clone).
-- At this point you may have some conflicts to deal with.
-- Once any conflict are resolved you can update the central repository with your
+- Once any conflicts are resolved you can update the central repository with your
   new code (using for example ``git push``).
 
-~~~~~~~~~~
+.. topic:: Further reading
 
-.. rubric:: Further reading
-
-For a proper introduction to hosting and collaborating with Git, see the
-excellent online book, `Pro Git <http://git-scm.com/book>`_.  The help pages of
-`Github`_ are also an excellent resource.
+    For a proper introduction to hosting and collaborating with Git, see the
+    excellent online book, `Pro Git <http://git-scm.com/book>`_.  The help pages
+    of `Github`_ are also an excellent resource.
 
 .. _Github: https://github.com/
