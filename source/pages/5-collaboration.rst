@@ -55,13 +55,6 @@ whatever you want with it.  Try::
 
 and you will see that you also have the full commit history.
 
-When you do a clone, Git automatically adds the source repository as a "remote"
-called ``origin``.  A remote is simply a pointer to another copy of the same
-repository.  Run the command::
-
-    % git remote -v
-
-and you should see ``origin`` listed there.
 
 
 Collaboration strategies
