@@ -12,86 +12,25 @@ This session will introduce the concept of version control and its particular im
 
 # NOTES.todo
 
-- Remember to use best practices paper @done
-- Add video of Linus saying why we should use Git
 - Remember to discuss GUI options...
+- Add `color-auto` command to `.gitconfig`
+- Include `git blame`
+- Include `git amend`
+- Include deleting/moving files
 
-
-# 1. Introduction
-
-## What is version control?
-
-- Basically a system to record changes to files (/documents) and folders.
-- You probably already use some form of version control but may not realise it...
-	- Built in to MS Word, Keynote, Dropbox etc.
-	
-Version control is commonly used to manage source code, however, it is also well suited to tracking changes to any kind of file which contains mostly text.  It can also be used by a lone developer or as a means for many people to share and collaborate on projects efficiently and safely.
-
-
-## Why you should use it (for everything)
-
-In important aspect of any scientific endeavour is **reproducibility**.  We should be able to replicate every figure we have ever publish, even if we have significantly developed our codes and tools in the mean time. 
-
-As astronomers, we spend much of our time writing code, whether it be a simulation code or a observational reduction pipeline.  As such, our codes are often constantly evolving.  By putting all of our code under version control we can:
-
-- Record the reference of the exact code version that produced a particular plot or result.
-- Roll back our code to previous states.
-- Identify when/how bugs were introduced.
-- Efficiently share and collaborate on our codes with others.
-
-Many of these are also useful when writing papers.  Here we can use version control to 
-
-- Bring back that paragraph we accidentally deleted last week.
-- Try out a different structure and simply disregard it if we don't like it.
-- Concurrently work on a paper with a collaborator and then automatically merge all of our updates together.
-
-The upshot is **you should use version control for almost everything**.  The benefits are well worth it...
-
-## Why Git?
-
-- distributed
-- fast
-- can work away on plane with no connection to central repo
-- written by Linus :)
-
-There are other alternatives but we aren't going to cover them in this tutorial...
-
-
-# 2. First steps
-
-I'll assume that you already have git installed and setup on your system.  If not then probably the easiest way to achieve this is to download an installer from [here](http://git-scm.com/downloads).
-
-## Creating a repository
-
-## Adding files
-
-## Committing changes
-
-
-# 3. Branches
-
-## What is a branch?
-
-## Creating a branch
-
-
-# 4. Merging and conflicts
-
-## Merging branches
-
-## Dealing with conflicts
-
-
-# 5. Sharing and collaboration
-
-## Your repository is your own
-
-## Online hosting
-
-## Strategies
-
-### Pull requests
-
-### Patches
-
+- Collaboration section
+    - Central repo
+        - Taking code open source
+    - Online hosting
+        - Options.  Recommend bitbucket for private and github for public.
+    - Cloning a repository
+    - Best practices when collaborating
+        - Use branches
+        - The command cycle (pull, merge, push)
+    - Collaboration options (won't cover in detail here)
+        - Forks
+        - Patches
+        - Pull requests
+        - Pushing
+    - This tutorial is publicly hosted online!
 

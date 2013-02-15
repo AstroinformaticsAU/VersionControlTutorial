@@ -6,6 +6,11 @@
 Version Control Tutorial
 =========================
 
+.. image:: /_static/vc-xkcd.jpg
+   :alt: Version control XKCD style
+   :align: center
+   :width: 80%
+
 These are the course notes for the **Version Control** session of the `2013 ASA/ANITA Astroinformatics Summer School <http://www.smp.uq.edu.au/anitaworkshop2013/?page_id=30>`_.
 
 This session introduces the concept of version control and its particular
@@ -16,8 +21,7 @@ following topics:
 - basic usage (creating a repository, adding files, committing changes)
 - branches
 - merging and conflicts
-- sharing and collaboration
-- online hosting
+- online hosting and collaboration
 
 This tutorial is licensed under a `Creative Commons Attribution-ShareAlike 3.0 Unported License <http://creativecommons.org/licenses/by-sa/3.0/deed.en_US>`_.
 
