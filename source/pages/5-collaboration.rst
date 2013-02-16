@@ -45,7 +45,7 @@ you can grab your own copy using the ``clone`` command.  Try cloning your own
 copy of the source for this tutorial (make sure you are not in your ``a_paper``
 repository when you do this)::
 
-    % git clone https://github.com/smutch/VersionControlTutorial.git
+    % git clone git://github.com/smutch/VersionControlTutorial.git 
     % cd VersionControlTutorial
 
 You are now inside your own personal copy of the repository and can do
