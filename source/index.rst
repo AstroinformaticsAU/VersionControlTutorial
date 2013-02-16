@@ -6,9 +6,9 @@ Version Control Tutorial
    :align: center
    :width: 80%
 
-   *Created using the awesome* `Comix I/O <http://cmx.io/>`_ *... and yes, this*
-   `comic <https://gist.github.com/smutch/4951871>`_ *is under version control.
-   :)*
+   *Created using the awesome* `Comix I/O <http://cmx.io/>`_ *... and yes,*
+   `this comic <https://gist.github.com/smutch/4951871>`_ *is under version
+   control.  :)*
 
 ~~~~~~~~~~
 

@@ -212,6 +212,8 @@ again::
 A final check with ``git status`` should show that ``master.tex`` now falls
 under the category of "Changes to be committed".
 
+.. _exercise-1a:
+
 .. topic:: Exercise 1a
 
     Add another file to your git repository called ``appendix.tex``.  You can
@@ -241,6 +243,28 @@ You will then be given the opportunity to change the last commit message if you
 want to.
 
 
+Deleting and moving files
+-------------------------
+
+To delete a file in your repository use the ``git rm`` command.  This will both
+delete the file from the file system and stage this deletion action for your
+next commit.
+
+.. topic:: Exercise 1b
+
+    Remove the bibliography.tex file you added in :ref:`Exercise
+    1a<exercise-1a>` using the ``git rm <file>`` command.  Remember to commit
+    afterwards!
+
+To move or rename a file, use the ``git mv`` command.  This will again both move
+the file and stage this change to the repository.  It is basically equivalent to
+doing::
+
+    % mv <old_name> <new_name>
+    % git rm <old_name>
+    % git add <new_name>
+
+
 Command summary
 ---------------
 
@@ -256,5 +280,9 @@ Command summary
 | ``git commit``         | Commit staged changes.                    |
 +------------------------+-------------------------------------------+
 | ``git commit --amend`` | Amend the last commit                     |
++------------------------+-------------------------------------------+
+| ``git rm``             | Delete a file and stage this change.      |
++------------------------+-------------------------------------------+
+| ``git mv``             | Move a file and stage this change.        |
 +------------------------+-------------------------------------------+
 
