@@ -25,7 +25,7 @@ You should replace ``vim`` with what ever your favorite editor is (e.g.
 ``emacs``, ``nano``, ``subl``, etc.).
 
 You can also make things a little easier on the eyes by telling Git to add some
-color to it's messages::
+color to its messages::
 
     % git config --global color.ui true
 
@@ -222,18 +222,39 @@ under the category of "Changes to be committed".
     ``appendix.tex``.
 
 
+Dealing with mistakes
+---------------------
+
+Perhaps you make a typo in your commit message, or maybe you forget to stage an
+important change before committing.  In this case you can easily amend your
+last commit using the ``git commit --amend`` command.
+
+Let's imagine that we forgot to add the file ``bibliography.tex`` to our
+repository when we made our last commit.  To fix this, first create the file and
+then stage it into the index.  Finally, run ``git commit --amend``::
+
+    % touch bibliography.tex
+    % git add bibliography.tex
+    % git commit --amend
+
+You will then be given the opportunity to change the last commit message if you
+want to.
+
+
 Command summary
 ---------------
 
-+-----------------+-----------------------------------------------+
-| **Command**     |  **Description**                              |
-+-----------------+-----------------------------------------------+
-| ``git init``    |  Initialise a new Git repository.             |
-+-----------------+-----------------------------------------------+
-| ``git status``  |  Check the current status of a repository.    |
-+-----------------+-----------------------------------------------+
-| ``git add``     |  Stage new and modified files.                |
-+-----------------+-----------------------------------------------+
-| ``git commit``  |  Commit staged changes.                       |
-+-----------------+-----------------------------------------------+
++------------------------+-------------------------------------------+
+| Command                | Description                               |
++========================+===========================================+
+| ``git init``           | Initialise a new Git repository.          |
++------------------------+-------------------------------------------+
+| ``git status``         | Check the current status of a repository. |
++------------------------+-------------------------------------------+
+| ``git add``            | Stage new and modified files.             |
++------------------------+-------------------------------------------+
+| ``git commit``         | Commit staged changes.                    |
++------------------------+-------------------------------------------+
+| ``git commit --amend`` | Amend the last commit                     |
++------------------------+-------------------------------------------+
 
