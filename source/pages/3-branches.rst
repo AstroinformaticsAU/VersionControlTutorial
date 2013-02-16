@@ -40,7 +40,7 @@ branch.
 
 Now run::
 
-    % git log
+    % git lg
 
 and you should see that our earlier commits from the ``master`` branch are still
 there.  When running ``git branch``, the newly created branch inherits the

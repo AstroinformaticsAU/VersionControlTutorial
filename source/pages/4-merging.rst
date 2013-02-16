@@ -19,7 +19,7 @@ First we checkout the ``master`` branch::
 
     % git checkout master
 
-If you run ``git log`` you should see that none of your commits to the
+If you run ``git lg`` you should see that none of your commits to the
 ``risky_idea`` branch are present.  You can further confirm this by looking at
 the contents of ``paper.tex``; The section "The Empire Strikes Back" shouldn't
 be present.
@@ -28,7 +28,7 @@ Now merge ``risky_idea`` into our current branch using the following command::
 
     % git merge risky_idea
 
-If everything runs smoothly, running ``git log`` should show your commits from
+If everything runs smoothly, running ``git lg`` should show your commits from
 the ``risky_idea`` branch.
 
 At this stage you could either checkout the ``risky_idea`` branch again and

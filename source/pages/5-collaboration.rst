@@ -51,7 +51,7 @@ repository when you do this)::
 You are now inside your own personal copy of the repository and can do
 whatever you want with it.  Try::
 
-    % git log
+    % git lg
 
 and you will see that you also have the full commit history.
 

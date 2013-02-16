@@ -55,6 +55,15 @@ looking at the help for the ``log`` command::
     Git command.  If you type ``git help`` on it's own, you will also be
     presented with a list of all major commands for reference.
 
+Its useful to be able to have this concise view of the log without having to
+type the long command every time.  We can achieve this by adding the command as
+an alias.  Try this command::
+
+    % git config --global alias.lg 'log --pretty=format:"%h %s <%an>" --graph'  
+
+Now you can get the concise log view by simply typing::
+
+    % git lg
 
 
 Comparing commits
@@ -69,7 +78,7 @@ would type::
 
 Your commit reference will be different to mine however, and so you must
 substitute the appropriate reference in place of ``ef5ca0a``.  Remember, you
-can get this reference using the ``git log`` command as outlined above.
+can get this reference using the ``git lg`` command as outlined above.
 
 .. highlight:: diff
 
