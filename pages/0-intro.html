@@ -1,0 +1,212 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Introduction &mdash; Version Control Tutorial</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Version Control Tutorial" href="../index.html" />
+    <link rel="next" title="First steps" href="1-firststeps.html" />
+    <link rel="prev" title="Version Control Tutorial" href="../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="1-firststeps.html" title="First steps"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="Version Control Tutorial"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Version Control Tutorial</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="what-is-version-control">
+<h2>What is version control?<a class="headerlink" href="#what-is-version-control" title="Permalink to this headline">¶</a></h2>
+<p>Version control, a.k.a. revision control / source code management, is basically
+a system for recording and managing changes made to files and folders.  It is
+commonly used to manage source code, however, it is also well suited to
+tracking changes to any kind of file which contains mostly text.  It can also
+be used by a lone developer or as a means for many people to share and
+collaborate on projects efficiently and safely.</p>
+<p>Chances are, you already employ your own version control system, even if you
+don&#8217;t realise it...  Many modern editors such as Microsoft Word and Apple Pages
+have this facility built in.  Also Dropbox maintains a full history of all of
+the files you have deletes and edited during the last month.</p>
+<p>You have almost certainly employed your own simple form of a version control
+system in the past.  Here is an example:</p>
+<img alt="../_images/intro1.png" class="align-center" src="../_images/intro1.png" />
+<p>This image shows the files and folders making up a paper fictitious paper
+submission.  There are a number of saved copies of the final <tt class="docutils literal"><span class="pre">article.tex</span></tt>
+which have created incrementally as the paper has been written, redrafted and
+submitted.  These are called <strong>revisions</strong>.  By looking at any of these
+revisions we are able to see the state of the paper as it was when the revision
+file was saved.  By comparing revision files we can also get a rough idea of
+how the paper developed and changed as it was written.  Of course, the more
+saved revisions we have, the easier it is to piece together how things changed
+over time.</p>
+</div>
+<div class="section" id="why-you-should-use-it-for-everything">
+<h2>Why you should use it (for everything)<a class="headerlink" href="#why-you-should-use-it-for-everything" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>&#8220;<em>In practice, everything that has been created manually should be put in
+version control, including programs, original field observations, and the
+source files for papers.</em>&#8220;</p>
+<p class="attribution">&mdash;Best Practices for Scientific Computing; Wilson et al. 2012
+(<a class="reference external" href="http://arxiv.org/abs/1210.0530">arXiv:1210.0530</a>)</p>
+</div></blockquote>
+<p>In important aspect of any scientific endeavour is <strong>reproducibility</strong>.  We
+should be able to replicate every figure we have ever published, even if we have
+significantly developed our codes and tools since.</p>
+<p>As astronomers, we spend much of our time writing code, whether it be a
+simulation code or an observational reduction pipeline.  As such, our codes are
+often constantly evolving.  By putting all of our code under version control we
+can:</p>
+<ul class="simple">
+<li>tag code versions for later reference <em>(via tags)</em>.</li>
+<li>record a unique identifier for the exact code version used to produce a
+particular plot or result <em>(via commit identifiers)</em>.</li>
+<li>roll back our code to previous states <em>(via checkout)</em>.</li>
+<li>identify when/how bugs were introduced <em>(via diff/blame)</em>.</li>
+<li>keep multiple versions of the same code in sync with each other <em>(via
+branches/merging)</em>.</li>
+<li>efficiently share and collaborate on our codes with others <em>(via
+remotes/online hosting)</em>.</li>
+</ul>
+<p>It&#8217;s important to also realise that many of the advantages of version control
+are not limited to just managing code.  For example, it can also be useful when
+writing papers.  Here we can use version control to:</p>
+<ul class="simple">
+<li>bring back that paragraph we accidentally deleted last week.</li>
+<li>try out a different structure and simply disregard it if we don&#8217;t like it.</li>
+<li>concurrently work on a paper with a collaborator and then automatically merge
+all of our changes together.</li>
+</ul>
+<p>The upshot is <strong>you should use version control for almost everything</strong>.  The
+benefits are well worth it...</p>
+</div>
+<div class="section" id="git">
+<span id="git-intro"></span><h2>Git<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h2>
+<p>In this tutorial we will be using <a class="reference external" href="http://git-scm.com/">Git</a>.</p>
+<blockquote>
+<div><img alt="../_images/git-logo.png" class="align-center" src="../_images/git-logo.png" style="width: 20%;" />
+<p>&#8220;<em>Git is a free and open source distributed version control system
+designed to handle everything from small to very large projects with speed
+and efficiency.</em></p>
+<p><em>Git is easy to learn and has a tiny footprint with lightning fast
+performance. It outclasses SCM tools like Subversion, CVS, Perforce, and
+ClearCase with features like cheap local branching, convenient staging
+areas, and multiple workflows.</em>&#8220;</p>
+<p class="attribution">&mdash;<a class="reference external" href="http://git-scm.com/">Git website</a></p>
+</div></blockquote>
+<p>The main feature of Git that sets it apart from other alternatives is that its
+<strong>distributed</strong>.  This means every person has their own complete copy of the
+entire repository and can make changes as they like, only committing to, or
+checking out from, the &#8216;central&#8217; repository when they are happy.  With more
+traditional &#8220;centralised&#8221; systems such as Subversion, users must have access to
+the central repository to commit any changes.  With Git, you could happily work
+away on a plane without an internet connection.</p>
+<p>Git is also much faster than many alternatives, such as Subversion, and is
+written primarily in C and shell script.  Finally - it&#8217;s worth noting that Git
+was originally written by the famous Linus Torvalds (creator of Linux).</p>
+<p>There are other worthwhile alternatives which we aren&#8217;t going to cover here - in
+particular <a class="reference external" href="http://mercurial.selenic.com/">Mercurial</a>.  Written in Python,
+Mercurial is similar to Git in basic design features and usage, however, it
+arguably has a smaller user base.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Introduction</a><ul>
+<li><a class="reference internal" href="#what-is-version-control">What is version control?</a></li>
+<li><a class="reference internal" href="#why-you-should-use-it-for-everything">Why you should use it (for everything)</a></li>
+<li><a class="reference internal" href="#git">Git</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../index.html"
+                        title="previous chapter">Version Control Tutorial</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="1-firststeps.html"
+                        title="next chapter">First steps</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="1-firststeps.html" title="First steps"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="Version Control Tutorial"
+             >previous</a> |</li>
+        <li><a href="../index.html">Version Control Tutorial</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Simon Mutch.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

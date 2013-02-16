@@ -1,0 +1,187 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Version Control Tutorial &mdash; Version Control Tutorial</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Version Control Tutorial" href="#" />
+    <link rel="next" title="Introduction" href="pages/0-intro.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="pages/0-intro.html" title="Introduction"
+             accesskey="N">next</a> |</li>
+        <li><a href="#">Version Control Tutorial</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="version-control-tutorial">
+<h1>Version Control Tutorial<a class="headerlink" href="#version-control-tutorial" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-center">
+<img alt="Version control XKCD style" src="_images/vc-xkcd.jpg" style="width: 80%;" />
+<p class="caption"><em>Created using the awesome</em> <a class="reference external" href="http://cmx.io/">Comix I/O</a> <em>... and yes,</em>
+<a class="reference external" href="https://gist.github.com/smutch/4951871">this comic</a> <em>is under version
+control.  :)</em></p>
+</div>
+<hr class="docutils" />
+<p>These are the course notes for the <strong>Version Control</strong> session of the <a class="reference external" href="http://www.smp.uq.edu.au/anitaworkshop2013/?page_id=30">2013
+ASA/ANITA Astroinformatics Summer School</a>.</p>
+<p>This session introduces the concept of version control and its particular
+importance for researchers.  We will also try out some practical examples using
+the <a class="reference external" href="http://git-scm.com/">Git</a> version control system and touch on the
+following topics:</p>
+<ul class="simple">
+<li>basic usage (creating a repository, adding files, committing changes)</li>
+<li>branches</li>
+<li>merging and conflicts</li>
+<li>online hosting and collaboration</li>
+</ul>
+<p>A pdf version of this tutorial can be found <a class="reference external" href="/_static/VersionControlTutorial.pdf">here</a>.</p>
+<p>This tutorial is licensed under a <a class="reference external" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative Commons Attribution-ShareAlike 3.0
+Unported License</a>.</p>
+<a class="reference external image-reference" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US"><img alt="Creative Commons License" class="align-center" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a>
+<div class="section" id="contents">
+<h2>Contents<a class="headerlink" href="#contents" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pages/0-intro.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pages/0-intro.html#what-is-version-control">What is version control?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/0-intro.html#why-you-should-use-it-for-everything">Why you should use it (for everything)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/0-intro.html#git">Git</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pages/1-firststeps.html">First steps</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pages/1-firststeps.html#creating-a-repository">Creating a repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/1-firststeps.html#adding-files">Adding files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/1-firststeps.html#committing-changes">Committing changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/1-firststeps.html#staging-modified-files">Staging modified files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/1-firststeps.html#dealing-with-mistakes">Dealing with mistakes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/1-firststeps.html#deleting-and-moving-files">Deleting and moving files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/1-firststeps.html#the-circle-of-life">The circle of life</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/1-firststeps.html#command-summary">Command summary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pages/2-viewing.html">Viewing and comparing commits</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pages/2-viewing.html#the-commit-history">The commit history</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/2-viewing.html#comparing-commits">Comparing commits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/2-viewing.html#playing-the-blame-game">Playing the blame game</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/2-viewing.html#command-summary">Command summary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pages/3-branches.html">Branches</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pages/3-branches.html#what-is-a-branch">What is a branch?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/3-branches.html#creating-branches">Creating branches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/3-branches.html#command-summary">Command summary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pages/4-merging.html">Merging and conflicts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pages/4-merging.html#merging">Merging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/4-merging.html#dealing-with-conflicts">Dealing with conflicts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/4-merging.html#command-summary">Command summary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pages/5-collaboration.html">Online hosting and collaboration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pages/5-collaboration.html#online-hosting">Online hosting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/5-collaboration.html#cloning-a-repository">Cloning a repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/5-collaboration.html#collaboration-strategies">Collaboration strategies</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pages/6-resources.html">Other resources</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pages/6-resources.html#tutorials">Tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/6-resources.html#gui-clients">GUI clients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/6-resources.html#miscelaneous">Miscelaneous</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="#">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Version Control Tutorial</a><ul>
+<li><a class="reference internal" href="#contents">Contents</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Next topic</h4>
+  <p class="topless"><a href="pages/0-intro.html"
+                        title="next chapter">Introduction</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="pages/0-intro.html" title="Introduction"
+             >next</a> |</li>
+        <li><a href="#">Version Control Tutorial</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Simon Mutch.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

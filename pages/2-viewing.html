@@ -1,0 +1,279 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Viewing and comparing commits &mdash; Version Control Tutorial</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Version Control Tutorial" href="../index.html" />
+    <link rel="next" title="Branches" href="3-branches.html" />
+    <link rel="prev" title="First steps" href="1-firststeps.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="3-branches.html" title="Branches"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="1-firststeps.html" title="First steps"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Version Control Tutorial</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="viewing-and-comparing-commits">
+<h1>Viewing and comparing commits<a class="headerlink" href="#viewing-and-comparing-commits" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="the-commit-history">
+<h2>The commit history<a class="headerlink" href="#the-commit-history" title="Permalink to this headline">¶</a></h2>
+<p>The command <tt class="docutils literal"><span class="pre">git</span> <span class="pre">log</span></tt> displays the commit history of the current branch.  If
+you try it in your <tt class="docutils literal"><span class="pre">dummy_paper</span></tt> directory you should see something like the
+following:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">commit 98cdaf38c12fccbfe92d4f15dc869afc12792b22</span>
+<span class="go">Author: Simon Mutch &lt;smutch@unimelb.edu.au&gt;</span>
+<span class="go">Date:   Sat Feb 16 15:56:41 2013 +1100</span>
+
+<span class="go">    Delete bibliography.tex.</span>
+
+<span class="go">commit cc745dbfdf0421c7d84d72c75d3a52c517665fe7</span>
+<span class="go">Author: Simon Mutch &lt;smutch@unimelb.edu.au&gt;</span>
+<span class="go">Date:   Sat Feb 16 15:54:55 2013 +1100</span>
+
+<span class="go">    Add another section, appendix.tex and bibliography.tex.</span>
+
+<span class="go">commit f615b15149a633c47f690bf891e39cb80029a71b</span>
+<span class="go">Author: Simon Mutch &lt;smutch@unimelb.edu.au&gt;</span>
+<span class="go">Date:   Sat Feb 16 15:51:06 2013 +1100</span>
+
+<span class="go">    Add basic structure of paper.tex</span>
+</pre></div>
+</div>
+<p>As you can see <tt class="docutils literal"><span class="pre">git</span> <span class="pre">log</span></tt> provides the unique reference (SHA-1 checksum) for
+each commit, the author name and email address, as well as the date and commit
+message.  The entries are listed in reverse chronological order (i.e.  the most
+recent commit first).</p>
+<p>There are a whole host of flags and arguments you can pass to <tt class="docutils literal"><span class="pre">git</span> <span class="pre">log</span></tt> to
+change what information is presented and how it looks.  For example, try typing:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">%</span> git log --pretty<span class="o">=</span>format:<span class="s2">&quot;%h %s &lt;%an&gt;&quot;</span> --graph
+</pre></div>
+</div>
+<p>The result should be something like this:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">* 98cdaf3 Delete bibliography.tex. &lt;Simon Mutch&gt;</span>
+<span class="go">* cc745db Add another section, appendix.tex and bibliography.tex. &lt;Simon Mutch&gt;</span>
+<span class="go">* f615b15 Add basic structure of paper.tex &lt;Simon Mutch&gt;</span>
+</pre></div>
+</div>
+<p>To investigate all the different options for formatting your log output, try
+looking at the help for the <tt class="docutils literal"><span class="pre">log</span></tt> command:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">%</span> git <span class="nb">help </span>log
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last"><tt class="docutils literal"><span class="pre">git</span> <span class="pre">help</span> <span class="pre">&lt;command&gt;</span></tt> can be used to get the documentation for almost every
+Git command.  If you type <tt class="docutils literal"><span class="pre">git</span> <span class="pre">help</span></tt> on it&#8217;s own, you will also be
+presented with a list of all major commands for reference.</p>
+</div>
+<p>Its useful to be able to have this concise view of the log without having to
+type the long command every time.  We can achieve this by adding the command as
+an alias.  Try this command:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">%</span> git config --global alias.lg <span class="s1">&#39;log --pretty=format:&quot;%h %s &lt;%an&gt;&quot; --graph&#39;</span>
+</pre></div>
+</div>
+<p>Now you can get the concise log view by simply typing:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">%</span> git lg
+</pre></div>
+</div>
+</div>
+<div class="section" id="comparing-commits">
+<h2>Comparing commits<a class="headerlink" href="#comparing-commits" title="Permalink to this headline">¶</a></h2>
+<p>Often we want to compare (or &#8220;difference&#8221;) commits to see how things have
+changed.  To do this we use the <tt class="docutils literal"><span class="pre">git</span> <span class="pre">diff</span></tt> command.  For example, to see how
+our paper has changed between the most recent commit and our first commit <strong>I</strong>
+would type:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">%</span> git diff ef5ca0a
+</pre></div>
+</div>
+<p>Your commit reference will be different to mine however, and so you must
+substitute the appropriate reference in place of <tt class="docutils literal"><span class="pre">ef5ca0a</span></tt>.  Remember, you
+can get this reference using the <tt class="docutils literal"><span class="pre">git</span> <span class="pre">lg</span></tt> command as outlined above.</p>
+<p>Once you run <tt class="docutils literal"><span class="pre">git</span> <span class="pre">diff</span></tt> successfully, you will see something like this:</p>
+<div class="highlight-diff"><div class="highlight"><pre><span class="gh">diff --git c/appendix.tex w/appendix.tex</span>
+new file mode 100644
+<span class="gh">index 0000000..e69de29</span>
+<span class="gh">diff --git c/paper.tex w/paper.tex</span>
+<span class="gh">index 3290236..599a0b6 100644</span>
+<span class="gd">--- c/paper.tex</span>
+<span class="gi">+++ w/paper.tex</span>
+<span class="gu">@@ -8,5 +8,8 @@</span>
+ \section{Introduction}
+ A long time ago in a galaxy far, far away...
+
+<span class="gi">+\section{A New Hope}</span>
+<span class="gi">+That&#39;s no moon, that&#39;s a battle station.</span>
+<span class="gi">+</span>
+ \end{document}
+</pre></div>
+</div>
+<p>The <tt class="docutils literal"><span class="pre">+</span></tt> signs show text which has been added since our first commit, and any
+<tt class="docutils literal"><span class="pre">-</span></tt> signs would indicate text which has been removed.  At the top of the diff,
+we can also see that we have added the <tt class="docutils literal"><span class="pre">appendix.tex</span></tt> file.</p>
+<p>By specifying only one commit reference when calling <tt class="docutils literal"><span class="pre">git</span> <span class="pre">diff</span></tt> we actually
+implicitly ran:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">%</span> git diff ef5ca0a..HEAD
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">HEAD</span></tt> is a shortcut for the commit reference pointing to the most recent
+relevant commit.  To access the second most recent commit we can use the
+shortcut <tt class="docutils literal"><span class="pre">^HEAD</span></tt>.  These shortcuts are handy to remember when comparing
+commits.</p>
+<p><tt class="docutils literal"><span class="pre">git</span> <span class="pre">diff</span></tt> can also be used to see how the current state of files have changed
+since the last commit.  To do this simply run the command with no arguments.</p>
+<div class="topic">
+<p class="topic-title first">Exercise 2a</p>
+<p>Add a sentence to the section &#8220;A New Hope&#8221; of <tt class="docutils literal"><span class="pre">paper.tex</span></tt> but don&#8217;t
+commit the change.  Now try running:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">%</span> git diff
+</pre></div>
+</div>
+<p>and make sure you understand the results.</p>
+</div>
+<p>Another useful way to view the commit history of your repository is to use the
+<tt class="docutils literal"><span class="pre">gitk</span></tt> GUI program which is packaged with Git.  This program displays both the
+commit history and relevant diffs all together.</p>
+<img alt="../_images/gitk.jpg" class="align-center" src="../_images/gitk.jpg" style="width: 80%;" />
+</div>
+<div class="section" id="playing-the-blame-game">
+<h2>Playing the blame game<a class="headerlink" href="#playing-the-blame-game" title="Permalink to this headline">¶</a></h2>
+<p>Another useful way to visualise the history to is to look at a single file and
+see in which commit each line was last changed.  Imagine that we identified a
+bug in a line of code.  We could then use this technique to see how long ago
+that bug was introduced (and by who!).  Try this:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">%</span> git blame paper.tex --date<span class="o">=</span>relative
+</pre></div>
+</div>
+<p>and you should see a copy of <tt class="docutils literal"><span class="pre">paper.tex</span></tt> with the reference, author and time
+of the last commit where each line was modified.</p>
+</div>
+<div class="section" id="command-summary">
+<h2>Command summary<a class="headerlink" href="#command-summary" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="40%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Command</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">git</span> <span class="pre">log</span></tt></td>
+<td>View the commit history for the current branch.</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">git</span> <span class="pre">diff</span> <span class="pre">&lt;commit&gt;</span> <span class="pre">&lt;commit&gt;</span></tt></td>
+<td>Compare (difference) two commits.</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">gitk</span></tt></td>
+<td>View the commit history in a GUI.</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">git</span> <span class="pre">blame</span> <span class="pre">&lt;file&gt;</span></tt></td>
+<td>See when each line of a file was last changed.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Viewing and comparing commits</a><ul>
+<li><a class="reference internal" href="#the-commit-history">The commit history</a></li>
+<li><a class="reference internal" href="#comparing-commits">Comparing commits</a></li>
+<li><a class="reference internal" href="#playing-the-blame-game">Playing the blame game</a></li>
+<li><a class="reference internal" href="#command-summary">Command summary</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="1-firststeps.html"
+                        title="previous chapter">First steps</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="3-branches.html"
+                        title="next chapter">Branches</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="3-branches.html" title="Branches"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="1-firststeps.html" title="First steps"
+             >previous</a> |</li>
+        <li><a href="../index.html">Version Control Tutorial</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Simon Mutch.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

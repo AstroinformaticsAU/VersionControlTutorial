@@ -1,0 +1,190 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Online hosting and collaboration &mdash; Version Control Tutorial</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Version Control Tutorial" href="../index.html" />
+    <link rel="next" title="Other resources" href="6-resources.html" />
+    <link rel="prev" title="Merging and conflicts" href="4-merging.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="6-resources.html" title="Other resources"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="4-merging.html" title="Merging and conflicts"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Version Control Tutorial</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="online-hosting-and-collaboration">
+<h1>Online hosting and collaboration<a class="headerlink" href="#online-hosting-and-collaboration" title="Permalink to this headline">¶</a></h1>
+<p>As well as managing our own codes and documents, another important use of
+version control is for collaboration...</p>
+<div class="section" id="online-hosting">
+<h2>Online hosting<a class="headerlink" href="#online-hosting" title="Permalink to this headline">¶</a></h2>
+<p>As <a class="reference internal" href="0-intro.html#git-intro"><em>already discussed</em></a>, Git uses a &#8220;distributed&#8221; model that
+allows everyone working on a project to have their own independent copy of the
+entire repository.  To collaborate effectively though we need a central version
+of the code base which is used to unify everyones&#8217; efforts.  Typically the best
+place for such a central repository is online.</p>
+<p>There are a number of excellent options for online hosting of git repositories
+(for a list see <a class="reference external" href="http://en.wikipedia.org/wiki/Git_(software)#Source_code_hosting">this</a> Wikipedia
+entry). However, there are two options in particular which stand out in my
+opinion:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://bitbucket.org/">Bitbucket</a>: This site overs unlimited free public
+repositories (where anyone can see and checkout your project).  If you have an
+email address from an academic institution though, then you can also get
+<a class="reference external" href="http://blog.bitbucket.org/2012/08/20/bitbucket-academic/">unlimited free private repositories</a>!  These
+repositories only allow users who you specify to have access.</li>
+<li><a class="reference external" href="https://github.com/">Github</a>: This is site also offers unlimited free
+public repositories.  With an academic institution email address you can also
+get 5 free private repositories.  Github is probably <strong>the</strong> place for new
+open source software and tools.  It&#8217;s a fantastic service and well worth
+using, especially if you want to take your own code open source.  You can also
+use Github to serve web pages for free.  This tutorial is open sourced on
+Github.</li>
+</ul>
+</div>
+<div class="section" id="cloning-a-repository">
+<h2>Cloning a repository<a class="headerlink" href="#cloning-a-repository" title="Permalink to this headline">¶</a></h2>
+<p>If you have the address (and correct permissions) for an online repository then
+you can grab your own copy using the <tt class="docutils literal"><span class="pre">clone</span></tt> command.  Try cloning your own
+copy of the source for this tutorial (make sure you are not in your <tt class="docutils literal"><span class="pre">a_paper</span></tt>
+repository when you do this):</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">%</span> git clone git://github.com/smutch/VersionControlTutorial.git
+<span class="gp">%</span> <span class="nb">cd </span>VersionControlTutorial
+</pre></div>
+</div>
+<p>You are now inside your own personal copy of the repository and can do
+whatever you want with it.  Try:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">%</span> git lg
+</pre></div>
+</div>
+<p>and you will see that you also have the full commit history.</p>
+</div>
+<div class="section" id="collaboration-strategies">
+<h2>Collaboration strategies<a class="headerlink" href="#collaboration-strategies" title="Permalink to this headline">¶</a></h2>
+<p>Unfortunately, it is out-with the scope of this tutorial to cover all of the
+different ways you can collaborate with Git.  There are a number of options for
+how to get your changes incorporated into the central repository for everyone to
+have access to.  These include, forking and pull requests, email patches, and
+direct pushing.</p>
+<p>The basic work-flow is almost always the same though:</p>
+<ul class="simple">
+<li>Make your changes in your own personal copy of the repository, ideally in a
+new branch.</li>
+<li>&#8220;Pull&#8221; (using the command <tt class="docutils literal"><span class="pre">git</span> <span class="pre">pull</span></tt>) the most recent version of the central
+repository into your <tt class="docutils literal"><span class="pre">master</span></tt> branch.  This makes sure you are up-to-date
+with any changes which were made by someone else subsequent to when you last
+pulled (or made your original clone).</li>
+<li>Merge your changes from your new branch into <tt class="docutils literal"><span class="pre">master</span></tt>.</li>
+<li>Once any conflicts are resolved you can update the central repository with your
+new code (using for example <tt class="docutils literal"><span class="pre">git</span> <span class="pre">push</span></tt>).</li>
+</ul>
+<div class="topic">
+<p class="topic-title first">Further reading</p>
+<p>For a proper introduction to hosting and collaborating with Git, see the
+excellent online book, <a class="reference external" href="http://git-scm.com/book">Pro Git</a>.  The help pages
+of <a class="reference external" href="https://github.com/">Github</a> are also an excellent resource.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Online hosting and collaboration</a><ul>
+<li><a class="reference internal" href="#online-hosting">Online hosting</a></li>
+<li><a class="reference internal" href="#cloning-a-repository">Cloning a repository</a></li>
+<li><a class="reference internal" href="#collaboration-strategies">Collaboration strategies</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="4-merging.html"
+                        title="previous chapter">Merging and conflicts</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="6-resources.html"
+                        title="next chapter">Other resources</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="6-resources.html" title="Other resources"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="4-merging.html" title="Merging and conflicts"
+             >previous</a> |</li>
+        <li><a href="../index.html">Version Control Tutorial</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Simon Mutch.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

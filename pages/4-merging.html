@@ -1,0 +1,275 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Merging and conflicts &mdash; Version Control Tutorial</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Version Control Tutorial" href="../index.html" />
+    <link rel="next" title="Online hosting and collaboration" href="5-collaboration.html" />
+    <link rel="prev" title="Branches" href="3-branches.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="5-collaboration.html" title="Online hosting and collaboration"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="3-branches.html" title="Branches"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Version Control Tutorial</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="merging-and-conflicts">
+<h1>Merging and conflicts<a class="headerlink" href="#merging-and-conflicts" title="Permalink to this headline">¶</a></h1>
+<p>At this stage we have two branches, <tt class="docutils literal"><span class="pre">master</span></tt> and <tt class="docutils literal"><span class="pre">risky_idea</span></tt>.  Let&#8217;s
+imagine that we have continued to work away on the <tt class="docutils literal"><span class="pre">risky_idea</span></tt> branch,
+committing our changes as we go...</p>
+<div class="section" id="merging">
+<h2>Merging<a class="headerlink" href="#merging" title="Permalink to this headline">¶</a></h2>
+<p>At some stage we will want fold our changes in the <tt class="docutils literal"><span class="pre">risky_idea</span></tt> branch back
+into the <tt class="docutils literal"><span class="pre">master</span></tt> branch.  We do this by &#8220;merging&#8221; the <tt class="docutils literal"><span class="pre">risky_idea</span></tt> branch
+into <tt class="docutils literal"><span class="pre">master</span></tt>.</p>
+<p>First we checkout the <tt class="docutils literal"><span class="pre">master</span></tt> branch:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">%</span> git checkout master
+</pre></div>
+</div>
+<p>If you run <tt class="docutils literal"><span class="pre">git</span> <span class="pre">lg</span></tt> you should see that none of your commits to the
+<tt class="docutils literal"><span class="pre">risky_idea</span></tt> branch are present.  You can further confirm this by looking at
+the contents of <tt class="docutils literal"><span class="pre">paper.tex</span></tt>; The section &#8220;The Empire Strikes Back&#8221; shouldn&#8217;t
+be present.</p>
+<p>Now merge <tt class="docutils literal"><span class="pre">risky_idea</span></tt> into our current branch using the following command:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">%</span> git merge risky_idea
+</pre></div>
+</div>
+<p>If everything runs smoothly, running <tt class="docutils literal"><span class="pre">git</span> <span class="pre">lg</span></tt> should show your commits from
+the <tt class="docutils literal"><span class="pre">risky_idea</span></tt> branch.</p>
+<p>At this stage you could either checkout the <tt class="docutils literal"><span class="pre">risky_idea</span></tt> branch again and
+continue working, or if your finished with it you can delete it.</p>
+<p>We no longer need the <tt class="docutils literal"><span class="pre">risky_idea</span></tt> branch, so delete it using:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">%</span> git branch -d risky_idea
+</pre></div>
+</div>
+</div>
+<div class="section" id="dealing-with-conflicts">
+<h2>Dealing with conflicts<a class="headerlink" href="#dealing-with-conflicts" title="Permalink to this headline">¶</a></h2>
+<p>Typically, as above, a <tt class="docutils literal"><span class="pre">git</span> <span class="pre">merge</span></tt> will progress smoothly with Git
+automatically working out how to merge the two branches.  Occasionally however,
+this is not the case.  In particular if we have made changes to two different
+branches which directly conflict with each other, then a merge will require us
+to tell Git which change is the correct one.  We will now engineer such a
+situation...</p>
+<p>First create a new branch called <tt class="docutils literal"><span class="pre">episode5</span></tt> and check it out:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">%</span> git branch episode5
+<span class="gp">%</span> git checkout episode5
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p>In situations where you want to create a new branch and immediately check it
+out (as above) you can use the following shortcut:</p>
+<div class="last highlight-console"><div class="highlight"><pre><span class="gp">%</span> git checkout -b &lt;branch_name&gt;
+</pre></div>
+</div>
+</div>
+<p>Then add another section to <tt class="docutils literal"><span class="pre">paper.tex</span></tt> with the following:</p>
+<div class="highlight-latex"><div class="highlight"><pre><span class="k">\section</span><span class="nb">{</span>Revenge of the Jedi<span class="nb">}</span>
+That blast came from the Death Star! That thing&#39;s operational!
+</pre></div>
+</div>
+<p>Commit your changes:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">%</span> git add paper.tex
+<span class="gp">%</span> git commit
+</pre></div>
+</div>
+<p>Now we have a new branch with a new commit that adds a section to our paper.
+However, imagine the situation where we decide we want to leave this section for
+the moment and go back to working on our second section.  To do this, we return
+to our <tt class="docutils literal"><span class="pre">master</span></tt> branch.  During the course of our edits we come up with
+another name for our newest section though, and pen this in so that we don&#8217;t
+forget.  This will lead to a conflict when we later merge our <tt class="docutils literal"><span class="pre">episode5</span></tt>
+branch back into <tt class="docutils literal"><span class="pre">master</span></tt>.  Let&#8217;s replicate this conflict now to see what
+happens...</p>
+<p>First checkout <tt class="docutils literal"><span class="pre">master</span></tt>:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">%</span> git checkout master
+</pre></div>
+</div>
+<p>Then edit <tt class="docutils literal"><span class="pre">paper.tex</span></tt>, this time with the text:</p>
+<div class="highlight-latex"><div class="highlight"><pre><span class="k">\section</span><span class="nb">{</span>Return of the Jedi<span class="nb">}</span>
+That blast came from the Death Star! That thing&#39;s operational!
+</pre></div>
+</div>
+<p>Again, stage and commit your changes:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">%</span> git commit -a
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Note that we used <tt class="docutils literal"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-a</span></tt> here to stage and commit our changes in
+one go.  This is a very useful shortcut.  However, it will only stage
+changes in files which are already being tracked by the repository.  i.e. if
+you add a new file to your project, you will still need to run <tt class="docutils literal"><span class="pre">git</span> <span class="pre">add</span></tt>
+for Git to start tracking it.  Additionally, it will stage <strong>all</strong> changes,
+so you have less control over what changes go into each commit.</p>
+</div>
+<p>Now our two branches <tt class="docutils literal"><span class="pre">master</span></tt> and <tt class="docutils literal"><span class="pre">episode5</span></tt> have commits in them which
+directly conflict.  Running the merge command from the <tt class="docutils literal"><span class="pre">master</span></tt> branch will
+flag this conflict and Git will ask us for help.  Try it now:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">%</span> git merge episode5
+</pre></div>
+</div>
+<p>and you should be presented with the following message:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Auto-merging paper.tex</span>
+<span class="go">CONFLICT (content): Merge conflict in paper.tex</span>
+<span class="go">Automatic merge failed; fix conflicts and then commit the result.</span>
+</pre></div>
+</div>
+<p>This tells us that a conflict has occurred in <tt class="docutils literal"><span class="pre">paper.tex</span></tt>.</p>
+<p>To resolve the conflict open up <tt class="docutils literal"><span class="pre">paper.tex</span></tt> in your favorite editor.  The
+offending section will look something like this:</p>
+<div class="highlight-latex"><div class="highlight"><pre>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+<span class="k">\section</span><span class="nb">{</span>Return of the Jedi<span class="nb">}</span>
+=======
+<span class="k">\section</span><span class="nb">{</span>Revenge of the Jedi<span class="nb">}</span>
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; episode5
+</pre></div>
+</div>
+<p>Everything between the lines <tt class="docutils literal"><span class="pre">&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span> <span class="pre">HEAD</span></tt> and <tt class="docutils literal"><span class="pre">=======</span></tt> are what exists in
+the <tt class="docutils literal"><span class="pre">HEAD</span></tt> commit (the tip of the <tt class="docutils literal"><span class="pre">master</span></tt> branch in this case).  Between
+the lines <tt class="docutils literal"><span class="pre">=======</span></tt> and <tt class="docutils literal"><span class="pre">&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span> <span class="pre">episode5</span></tt> is what exists in our
+<tt class="docutils literal"><span class="pre">episode5</span></tt> branch.</p>
+<p>In order to resolve the conflict, pick which of the section headings we want to
+use and remove the other lines (including the <tt class="docutils literal"><span class="pre">=======</span></tt> line and those lines
+starting with <tt class="docutils literal"><span class="pre">&gt;</span></tt> or <tt class="docutils literal"><span class="pre">&lt;</span></tt> symbols.  In our case we want to keep the section
+title from the <tt class="docutils literal"><span class="pre">master</span></tt> branch, and so we need to leave only that line:</p>
+<div class="highlight-latex"><div class="highlight"><pre><span class="k">\section</span><span class="nb">{</span>Return of the Jedi<span class="nb">}</span>
+</pre></div>
+</div>
+<p>After you have edited and saved <tt class="docutils literal"><span class="pre">paper.tex</span></tt>, finish the merge by staging and
+committing your results:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">%</span> git commit -a
+</pre></div>
+</div>
+<p>The commit message will be auto-populated for you, and so there is no need to
+edit it.</p>
+</div>
+<div class="section" id="command-summary">
+<h2>Command summary<a class="headerlink" href="#command-summary" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="76%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Command</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">git</span> <span class="pre">merge</span></tt></td>
+<td>Merge branches and commits.</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">-d</span></tt></td>
+<td>Delete a branch.</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-a</span></tt></td>
+<td>Stage <strong>all</strong> changes in <strong>tracked</strong> files and commit them.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Merging and conflicts</a><ul>
+<li><a class="reference internal" href="#merging">Merging</a></li>
+<li><a class="reference internal" href="#dealing-with-conflicts">Dealing with conflicts</a></li>
+<li><a class="reference internal" href="#command-summary">Command summary</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="3-branches.html"
+                        title="previous chapter">Branches</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="5-collaboration.html"
+                        title="next chapter">Online hosting and collaboration</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="5-collaboration.html" title="Online hosting and collaboration"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="3-branches.html" title="Branches"
+             >previous</a> |</li>
+        <li><a href="../index.html">Version Control Tutorial</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Simon Mutch.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

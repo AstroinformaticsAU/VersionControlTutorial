@@ -1,0 +1,193 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Branches &mdash; Version Control Tutorial</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Version Control Tutorial" href="../index.html" />
+    <link rel="next" title="Merging and conflicts" href="4-merging.html" />
+    <link rel="prev" title="Viewing and comparing commits" href="2-viewing.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="4-merging.html" title="Merging and conflicts"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="2-viewing.html" title="Viewing and comparing commits"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Version Control Tutorial</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="branches">
+<h1>Branches<a class="headerlink" href="#branches" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="what-is-a-branch">
+<h2>What is a branch?<a class="headerlink" href="#what-is-a-branch" title="Permalink to this headline">¶</a></h2>
+<p>Branches allow you to diverge from your current development and try something
+new without altering the history of your main work.  For example, you could
+implement a new code feature whilst leaving the fully functional (hopefully
+working and tested) code intact for others to checkout.</p>
+<p>In Git, branching is generally quick, flexible and simple.  It is a fantastic
+way to test out ideas, try new things and safely develop your repository.  This
+is especially true when collaborating with other people...</p>
+</div>
+<div class="section" id="creating-branches">
+<h2>Creating branches<a class="headerlink" href="#creating-branches" title="Permalink to this headline">¶</a></h2>
+<p>All new repositories, by default, start on a branch called <tt class="docutils literal"><span class="pre">master</span></tt> (you
+should see this name if you again run <tt class="docutils literal"><span class="pre">git</span> <span class="pre">status</span></tt>).</p>
+<p>Let&#8217;s now create a new branch called <tt class="docutils literal"><span class="pre">risky_idea</span></tt> by typing the following
+command inside of our <tt class="docutils literal"><span class="pre">dummy_paper</span></tt> directory:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">%</span> git branch risky_idea
+</pre></div>
+</div>
+<p>Well that was simple!  However, if a quick check of <tt class="docutils literal"><span class="pre">git</span> <span class="pre">status</span></tt> shows that we
+are still on the <tt class="docutils literal"><span class="pre">master</span></tt> branch.  In order to start working with our new
+branch we need to perform a <tt class="docutils literal"><span class="pre">checkout</span></tt>; This moves our current &#8220;HEAD&#8221;
+(remember this is what Git calls the pointer to the most recent relevant commit)
+to the branch <tt class="docutils literal"><span class="pre">risky_idea</span></tt>:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">%</span> git checkout risky_idea
+</pre></div>
+</div>
+<p>Running <tt class="docutils literal"><span class="pre">git</span> <span class="pre">status</span></tt> now should show that you are on the <tt class="docutils literal"><span class="pre">risky_idea</span></tt>
+branch.</p>
+<p>Now run:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">%</span> git lg
+</pre></div>
+</div>
+<p>and you should see that our earlier commits from the <tt class="docutils literal"><span class="pre">master</span></tt> branch are still
+there.  When running <tt class="docutils literal"><span class="pre">git</span> <span class="pre">branch</span></tt>, the newly created branch inherits the
+history of the original branch we diverged from (in this case the <tt class="docutils literal"><span class="pre">master</span></tt>
+branch).  However, any subsequent commits to the new branch will not exist in
+the original.</p>
+<div class="topic">
+<p class="topic-title first">Exercise 3a</p>
+<p>Add another section to <tt class="docutils literal"><span class="pre">paper.tex</span></tt> with the following:</p>
+<div class="highlight-latex"><div class="highlight"><pre><span class="k">\section</span><span class="nb">{</span>The Empire Strikes Back<span class="nb">}</span>
+Laugh it up fuzz-ball!...
+</pre></div>
+</div>
+<p>Then stage and commit your changes.  Finally, compare the <tt class="docutils literal"><span class="pre">risky_idea</span></tt>
+branch with the tip of the <tt class="docutils literal"><span class="pre">master</span></tt> branch using <tt class="docutils literal"><span class="pre">git</span> <span class="pre">diff</span></tt>:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">%</span> git diff master
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="command-summary">
+<h2>Command summary<a class="headerlink" href="#command-summary" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="40%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Command</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">git</span> <span class="pre">branch</span></tt></td>
+<td>Create a new branch.</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">git</span> <span class="pre">checkout</span></tt></td>
+<td>Checkout a branch/commit.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Branches</a><ul>
+<li><a class="reference internal" href="#what-is-a-branch">What is a branch?</a></li>
+<li><a class="reference internal" href="#creating-branches">Creating branches</a></li>
+<li><a class="reference internal" href="#command-summary">Command summary</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="2-viewing.html"
+                        title="previous chapter">Viewing and comparing commits</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="4-merging.html"
+                        title="next chapter">Merging and conflicts</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="4-merging.html" title="Merging and conflicts"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="2-viewing.html" title="Viewing and comparing commits"
+             >previous</a> |</li>
+        <li><a href="../index.html">Version Control Tutorial</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Simon Mutch.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>
