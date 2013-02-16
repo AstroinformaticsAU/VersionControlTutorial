@@ -27,7 +27,7 @@ following topics:
 - online hosting and collaboration
 
 A pdf version of this tutorial can be found `here
-</_static/VersionControlTutorial.pdf>`_.
+<_static/VersionControlTutorial.pdf>`_.
 
 This tutorial is licensed under a `Creative Commons Attribution-ShareAlike 3.0
 Unported License <http://creativecommons.org/licenses/by-sa/3.0/deed.en_US>`_.
