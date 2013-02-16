@@ -68,23 +68,11 @@ Adding files
 
 Now we have our fresh Git repository.  The next step is to start adding files!
 
-Use your editor of choice to start a LaTeX file named ``master.tex`` in your
-project directory (``dummy_paper``).
-
-.. note::
-
-    If your unsure what editor to use you can try ``nano`` for this simple
-    exercise::
-
-    % nano master.tex
-
-    To save and exit the file press ``Control-x``, then answer the question
-    with the ``y`` key, before finally accepting the filename presented by
-    hitting ``Enter``. 
-
 .. highlight:: latex
 
-Add the following to your file and save your changes::
+Use your editor of choice to start a LaTeX file named ``paper.tex`` in your
+project directory (``dummy_paper``).   Add the following to your file and save
+your changes::
 
     \documentclass{article}   
 
@@ -100,6 +88,17 @@ Add the following to your file and save your changes::
 
 .. highlight:: console
 
+.. .. note::
+
+..     If your unsure what editor to use you can try ``nano`` for this simple
+..     exercise:
+
+..     % nano paper.tex
+
+..     To save and exit the file press ``Control-x``, then answer the question
+..     with the ``y`` key, before finally accepting the filename presented by
+..     hitting ``Enter``. 
+
 Now let's check the status of our repository using the following command::
 
     % git status
@@ -113,16 +112,16 @@ You should see something similar to the following::
     # Untracked files:
     #   (use "git add <file>..." to include in what will be committed)
     #
-    #	master.tex
+    #	paper.tex
     nothing added to commit but untracked files present (use "git add" to track) 
 
-This tells us that ``master.tex`` currently falls under the category of
+This tells us that ``paper.tex`` currently falls under the category of
 "untracked" files.  In other words, Git is not tracking any changes we make to
 this file.
 
 In order to tell Git to start tracking our new file, use the following command::
 
-    % git add master.tex
+    % git add paper.tex
 
 
 
@@ -142,11 +141,11 @@ you should see something like the following::
     # Changes to be committed:
     #   (use "git rm --cached <file>..." to unstage)
     #
-    #	new file:   master.tex
+    #	new file:   paper.tex
     #
 
 This tells us that we have changes to our repository (here the creation of a new
-file called ``master.tex``) that need to be "committed".
+file called ``paper.tex``) that need to be "committed".
 
 Committing changes to the repository is the key step of version control.  This
 is where we save a snapshot of the current state of all tracked files.  To
@@ -158,7 +157,7 @@ This will bring up your favorite editor to allow you to provide a "commit
 message".  On the **first line** of the file write the following commit
 message::
 
-    Add basic structure of master.tex
+    Add basic structure of paper.tex
 
 then save and exit.
 
@@ -183,7 +182,7 @@ Staging modified files
 
 .. highlight:: latex
 
-Add another section to ``master.tex`` with the following::
+Add another section to ``paper.tex`` with the following::
 
     \section{A New Hope}
     That's no moon, that's a battle station.
@@ -197,19 +196,19 @@ If you now run ``git status``, you should see the following::
     #   (use "git add <file>..." to update what will be committed)
     #   (use "git checkout -- <file>..." to discard changes in working directory)
     #
-    #	modified:   master.tex
+    #	modified:   paper.tex
     #
     no changes added to commit (use "git add" and/or "git commit -a")
 
-What Git now tells us is that ``master.tex`` falls under the category of
+What Git now tells us is that ``paper.tex`` falls under the category of
 "Changes not staged for commit".  This means the file has changed since the last
 commit, however, we haven't told Git that we want to include these new changes
 in our next commit.  To do that, we must "stage" the file using ``git add``
 again::
 
-    % git add master.tex
+    % git add paper.tex
 
-A final check with ``git status`` should show that ``master.tex`` now falls
+A final check with ``git status`` should show that ``paper.tex`` now falls
 under the category of "Changes to be committed".
 
 .. _exercise-1a:
@@ -220,7 +219,7 @@ under the category of "Changes to be committed".
     put whatever you want in here (or just leave it empty), but don't forget to
     ``add`` it to your repository.
 
-    Go ahead and commit your staged changes to both ``master.tex`` and
+    Go ahead and commit your staged changes to both ``paper.tex`` and
     ``appendix.tex``.
 
 

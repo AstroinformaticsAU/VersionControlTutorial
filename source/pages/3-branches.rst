@@ -52,7 +52,7 @@ the original.
 
     .. highlight:: latex
 
-    Add another section to ``master.tex`` with the following::
+    Add another section to ``paper.tex`` with the following::
     
         \section{The Empire Strikes Back}
         Laugh it up fuzz-ball!...

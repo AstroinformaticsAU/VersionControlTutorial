@@ -21,7 +21,7 @@ First we checkout the ``master`` branch::
 
 If you run ``git log`` you should see that none of your commits to the
 ``risky_idea`` branch are present.  You can further confirm this by looking at
-the contents of ``master.tex``; The section "The Empire Strikes Back" shouldn't
+the contents of ``paper.tex``; The section "The Empire Strikes Back" shouldn't
 be present.
 
 Now merge ``risky_idea`` into our current branch using the following command::
@@ -63,7 +63,7 @@ First create a new branch called ``episode5`` and check it out::
 
 .. highlight:: latex
 
-Then add another section to ``master.tex`` with the following::
+Then add another section to ``paper.tex`` with the following::
 
     \section{Revenge of the Jedi}
     That blast came from the Death Star! That thing's operational!
@@ -72,7 +72,7 @@ Then add another section to ``master.tex`` with the following::
 
 Commit your changes::
 
-    % git add master.tex
+    % git add paper.tex
     % git commit
 
 Now we have a new branch with a new commit that adds a section to our paper.
@@ -90,17 +90,26 @@ First checkout ``master``::
 
 .. highlight:: latex
 
-Then edit ``master.tex``, this time with the text::
+Then edit ``paper.tex``, this time with the text::
 
     \section{Return of the Jedi}
     That blast came from the Death Star! That thing's operational!
 
 .. highlight:: console
 
-Again, commit your changes::
+Again, stage and commit your changes::
 
-    % git add master.tex
-    % git commit
+    % git commit -a
+
+.. note::
+
+    Note that we used ``git commit -a`` here to stage and commit our changes in
+    one go.  This is a very useful shortcut.  However, it will only stage
+    changes in files which are already being tracked by the repository.  i.e. if
+    you add a new file to your project, you will still need to run ``git add``
+    for Git to start tracking it.  Additionally, it will stage **all** changes,
+    so you have less control over what changes go into each commit.
+
 
 Now our two branches ``master`` and ``episode5`` have commits in them which
 directly conflict.  Running the merge command from the ``master`` branch will
@@ -110,15 +119,15 @@ flag this conflict and Git will ask us for help.  Try it now::
 
 and you should be presented with the following message::
 
-    Auto-merging master.tex
-    CONFLICT (content): Merge conflict in master.tex
+    Auto-merging paper.tex
+    CONFLICT (content): Merge conflict in paper.tex
     Automatic merge failed; fix conflicts and then commit the result.
 
 .. highlight:: latex
 
-This tells us that a conflict has occurred in ``master.tex``.  
+This tells us that a conflict has occurred in ``paper.tex``.  
 
-To resolve the conflict open up ``master.tex`` in your favorite editor.  The
+To resolve the conflict open up ``paper.tex`` in your favorite editor.  The
 offending section will look something like this::
 
     <<<<<<< HEAD
@@ -141,7 +150,7 @@ title from the ``master`` branch, and so we need to leave only that line::
 
 .. highlight:: console
 
-After you have edited and saved ``master.tex``, finish the merge by staging and
+After you have edited and saved ``paper.tex``, finish the merge by staging and
 committing your results::
 
     % git commit -a 
@@ -149,25 +158,17 @@ committing your results::
 The commit message will be auto-populated for you, and so there is no need to
 edit it.
 
-.. note::
-
-    Note that we used ``git commit -a`` here to stage and commit our changes in
-    one go.  This is a very useful shortcut.  However, it will only stage
-    changes in files which are already being tracked by the repository.  i.e. if
-    you add a new file to your project, you will still need to run ``git add``
-    for Git to start tracking it.
-
 
 Command summary
 ---------------
 
-+-------------------+---------------------------------------------------------+
-| Command           | Description                                             |
-+===================+=========================================================+
-| ``git merge``     | Merge branches and commits.                             |
-+-------------------+---------------------------------------------------------+
-| ``git branch -d`` | Delete a branch.                                        |
-+-------------------+---------------------------------------------------------+
-| ``git commit -a`` | Stage all changes in **tracked** files and commit them. |
-+-------------------+---------------------------------------------------------+
++-------------------+-------------------------------------------------------------+
+| Command           | Description                                                 |
++===================+=============================================================+
+| ``git merge``     | Merge branches and commits.                                 |
++-------------------+-------------------------------------------------------------+
+| ``git branch -d`` | Delete a branch.                                            |
++-------------------+-------------------------------------------------------------+
+| ``git commit -a`` | Stage **all** changes in **tracked** files and commit them. |
++-------------------+-------------------------------------------------------------+
 

@@ -10,17 +10,23 @@ The command ``git log`` displays the commit history of the current branch.  If
 you try it in your ``dummy_paper`` directory you should see something like the
 following::
 
-    commit 2983eadcbb3c5b198906c252bc5ee3ff2a99f572
-    Author: G Lucas <glucas@jabbaspalace.edu.au>
-    Date:   Tue Feb 12 10:16:23 2013 +1100
+    commit 98cdaf38c12fccbfe92d4f15dc869afc12792b22
+    Author: Simon Mutch <smutch@unimelb.edu.au>
+    Date:   Sat Feb 16 15:56:41 2013 +1100
 
-        Add section "A New Hope" and appendix.tex.
+        Delete bibliography.tex.
 
-    commit ef5ca0a7d216a57aea08d2227e167f38d31277bc
-    Author: G Lucas <glucas@jabbaspalace.edu.au>
-    Date:   Mon Feb 11 14:54:05 2013 +1100
+    commit cc745dbfdf0421c7d84d72c75d3a52c517665fe7
+    Author: Simon Mutch <smutch@unimelb.edu.au>
+    Date:   Sat Feb 16 15:54:55 2013 +1100
 
-        Add basic structure of master.tex.
+        Add another section, appendix.tex and bibliography.tex.
+
+    commit f615b15149a633c47f690bf891e39cb80029a71b
+    Author: Simon Mutch <smutch@unimelb.edu.au>
+    Date:   Sat Feb 16 15:51:06 2013 +1100
+
+        Add basic structure of paper.tex
 
 As you can see ``git log`` provides the unique reference (SHA-1 checksum) for
 each commit, the author name and email address, as well as the date and commit
@@ -34,8 +40,9 @@ change what information is presented and how it looks.  For example, try typing:
 
 The result should be something like this::
 
-    * 2983ead Add section "A New Hope" and appendix.tex. <G Lucas>
-    * ef5ca0a Add basic structure of master.tex. <G Lucas> 
+    * 98cdaf3 Delete bibliography.tex. <Simon Mutch>
+    * cc745db Add another section, appendix.tex and bibliography.tex. <Simon Mutch>
+    * f615b15 Add basic structure of paper.tex <Simon Mutch>
 
 To investigate all the different options for formatting your log output, try
 looking at the help for the ``log`` command::
@@ -68,21 +75,21 @@ can get this reference using the ``git log`` command as outlined above.
 
 Once you run ``git diff`` successfully, you will see something like this::
 
-    diff --git a/appendix.tex b/appendix.tex
+    diff --git c/appendix.tex w/appendix.tex
     new file mode 100644
     index 0000000..e69de29
-    diff --git a/master.tex b/master.tex
-    index 0f8e62c..7c3dbaf 100644
-    --- a/master.tex
-    +++ b/master.tex
-    @@ -8,4 +8,7 @@
+    diff --git c/paper.tex w/paper.tex
+    index 3290236..599a0b6 100644
+    --- c/paper.tex
+    +++ w/paper.tex
+    @@ -8,5 +8,8 @@
      \section{Introduction}
      A long time ago in a galaxy far, far away...
      
     +\section{A New Hope}
     +That's no moon, that's a battle station.
     +
-     \end{document} 
+     \end{document}
 
 .. highlight:: console
 
@@ -106,7 +113,7 @@ since the last commit.  To do this simply run the command with no arguments.
 
 .. topic:: Exercise 2a
 
-    Add a sentence to the section "A New Hope" of ``master.tex`` but don't
+    Add a sentence to the section "A New Hope" of ``paper.tex`` but don't
     commit the change.  Now try running::
 
         % git diff
@@ -131,9 +138,9 @@ see in which commit each line was last changed.  Imagine that we identified a
 bug in a line of code.  We could then use this technique to see how long ago
 that bug was introduced (and by who!).  Try this::
 
-    % git blame master.tex --date=relative
+    % git blame paper.tex --date=relative
 
-and you should see a copy of ``master.tex`` with the reference, author and time
+and you should see a copy of ``paper.tex`` with the reference, author and time
 of the last commit where each line was modified.  
 
 

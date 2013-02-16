@@ -74,6 +74,7 @@ The basic work-flow is almost always the same though:
   repository into your ``master`` branch.  This makes sure you are up-to-date
   with any changes which were made by someone else subsequent to when you last
   pulled (or made your original clone).
+- Merge your changes from your new branch into ``master``.
 - Once any conflicts are resolved you can update the central repository with your
   new code (using for example ``git push``).
 
