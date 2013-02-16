@@ -224,6 +224,7 @@ under the category of "Changes to be committed".
     ``appendix.tex``.
 
 
+
 Dealing with mistakes
 ---------------------
 
@@ -250,6 +251,11 @@ To delete a file in your repository use the ``git rm`` command.  This will both
 delete the file from the file system and stage this deletion action for your
 next commit.
 
+Alternatively, you can tell Git to remove a file from the repository (stop
+tracking the file) without actually deleting it from the file system.  This is
+achieved by passing the ``--cached`` flag to the ``rm`` command (i.e. ``git rm
+--cached <filename>``).
+
 .. topic:: Exercise 1b
 
     Remove the bibliography.tex file you added in :ref:`Exercise
@@ -257,12 +263,30 @@ next commit.
     afterwards!
 
 To move or rename a file, use the ``git mv`` command.  This will again both move
-the file and stage this change to the repository.  It is basically equivalent to
-doing::
+the file and stage this change to the repository.
 
-    % mv <old_name> <new_name>
-    % git rm <old_name>
-    % git add <new_name>
+
+The circle of life
+------------------
+
+At this point we have covered the basic "life cycle" of files and changes in
+Git.  Each file can have one of four different states:
+
+- **Untracked**: It's not listed in the last commit
+- **Unmodified**: It hasn't changed since the last commit
+- **Modified**: It has changed since the last commit
+- **Staged**: The changes will be recorded in the next commit made
+
+The method with which we move each file from one state to another is outlined in
+the following diagram:
+
+.. figure:: /_static/file-lifecycle.png
+   :align: center
+   :width: 50%
+
+   Credit: The `Pro Git
+   <http://git-scm.com/book/en/Git-Basics-Recording-Changes-to-the-Repository>`_
+   book.
 
 
 Command summary
