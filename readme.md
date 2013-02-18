@@ -1,5 +1,5 @@
-Unix Tutorial
-=============
+Version Control Tutorial
+========================
 
 This is the source code.  To see the actual tutorial point your browser [HERE](http://astroinformaticsau.github.com/VersionControlTutorial).
 
