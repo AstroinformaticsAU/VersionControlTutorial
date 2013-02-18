@@ -21,6 +21,8 @@ cd VersionControlTutorial
 git clone -b gh-pages git@github.com:AstroinformaticsAU/VersionControlTutorial.git build_html
 ```
 
+Lastly, make the directory ``build_other`` in the base directory of the repo.
+
 After that you should be good to go.  Build the site with `make html` and clean with `make clean`.
 
 
