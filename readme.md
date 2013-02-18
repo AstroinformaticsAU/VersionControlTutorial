@@ -1,7 +1,7 @@
 Unix Tutorial
 =============
 
-This is the source code.  To see the actual tutorial point your browser [HERE](http://smutch.github.com/VersionControlTutorial).
+This is the source code.  To see the actual tutorial point your browser [HERE](http://astroinformaticsau.github.com/VersionControlTutorial).
 
 Working with the source
 -----------------------
@@ -11,14 +11,14 @@ To work with the source you must have Python and Sphinx installed.
 First clone the master branch of this repo:
 
 ```bash
-git clone git@github.com:smutch/VersionControlTutorial.git
+git@github.com:AstroinformaticsAU/VersionControlTutorial.git
 ```
 
 Then re-clone the gh-pages branch of the repo into the directory build\_html:
 
 ```bash
 cd VersionControlTutorial
-git clone -b gh-pages git@github.com:smutch/VersionControlTutorial.git build_html
+git clone -b gh-pages git@github.com:AstroinformaticsAU/VersionControlTutorial.git build_html
 ```
 
 After that you should be good to go.  Build the site with `make html` and clean with `make clean`.

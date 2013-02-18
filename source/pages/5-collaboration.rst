@@ -45,13 +45,13 @@ you can grab your own copy using the ``clone`` command.  Try cloning your own
 copy of the source for this tutorial (make sure you are not in your ``a_paper``
 repository when you do this)::
 
-    % git clone git://github.com/smutch/VersionControlTutorial.git 
+    % git clone git://github.com/AstroinformaticsAU/VersionControlTutorial.git
     % cd VersionControlTutorial
 
 You are now inside your own personal copy of the repository and can do
 whatever you want with it.  Try::
 
-    % git lg
+    % git log
 
 and you will see that you also have the full commit history.
 
